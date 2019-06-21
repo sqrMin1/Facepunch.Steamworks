@@ -45,11 +45,23 @@ namespace Steamworks
 			return Internal.DownloadItem( fileId, highPriority );
 		}
 
-		/// <summary>
-		/// Utility function to fetch a single item. Internally this uses Ugc.FileQuery -
-		/// which you can use to query multiple items if you need to.
-		/// </summary>
-		public static async Task<Ugc.Item?> QueryFileAsync( PublishedFileId fileId )
+        public static async Task<bool> SubscribeItem(PublishedFileId fileId)
+        {
+            var r = await Internal.SubscribeItem(fileId);
+            return r?.Result == Result.OK;
+        }
+
+        public static async Task<bool> UnSubscribeItem(PublishedFileId fileId)
+        {
+            var r = await Internal.UnsubscribeItem(fileId);
+            return r?.Result == Result.OK;
+        }
+
+        /// <summary>
+        /// Utility function to fetch a single item. Internally this uses Ugc.FileQuery -
+        /// which you can use to query multiple items if you need to.
+        /// </summary>
+        public static async Task<Ugc.Item?> QueryFileAsync( PublishedFileId fileId )
 		{
 			var result = await Ugc.Query.All
 									.WithFileId( fileId )
