@@ -531,7 +531,7 @@ namespace Steamworks.Data
 		public int CompareTo( InputHandle_t other ) => Value.CompareTo( other.Value );
 	}
 	
-	internal struct InputActionSetHandle_t : IEquatable<InputActionSetHandle_t>, IComparable<InputActionSetHandle_t>
+	public struct InputActionSetHandle_t : IEquatable<InputActionSetHandle_t>, IComparable<InputActionSetHandle_t>
 	{
 		public ulong Value;
 		

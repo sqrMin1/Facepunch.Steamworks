@@ -47,8 +47,40 @@ namespace Steamworks
 			return SteamInput.Internal.GetAnalogActionData( Handle, SteamInput.GetAnalogActionHandle( actionName ) );
 		}
 
+        public InputActionSetHandle_t GetActionSetHandle(string actionSetName)
+        {
+            return SteamInput.Internal.GetActionSetHandle(actionSetName);
+        }
 
-		public override string ToString() => $"{InputType}.{Handle.Value}";
+        public InputActionOrigin[] GetDigitalOrigins(string inputActionSet, string digitalActionHandle)
+        {
+            InputActionOrigin[] origins = new InputActionOrigin[8];
+            SteamInput.Internal.GetDigitalActionOrigins(Handle, SteamInput.Internal.GetActionSetHandle(inputActionSet), SteamInput.Internal.GetDigitalActionHandle(digitalActionHandle), ref origins);
+            return origins;
+        }
+
+        public InputActionSetHandle_t GetCurrentActionSetLayer()
+        {
+            return SteamInput.Internal.GetCurrentActionSet(Handle);
+        }
+
+        public string GetStringForActionOrigin(InputActionOrigin origin)
+        {
+            return SteamInput.Internal.GetStringForActionOrigin(origin);
+        }
+
+        public string GetGlyphForActionOrigin(InputActionOrigin origin)
+        {
+            return SteamInput.Internal.GetGlyphForActionOrigin(origin);
+        }
+
+        public string GetGlyphForXboxOrigin(XboxOrigin origin)
+        {
+            return SteamInput.Internal.GetGlyphForXboxOrigin(origin);
+        }
+
+
+        public override string ToString() => $"{InputType}.{Handle.Value}";
 
 
 		public static bool operator ==( Controller a, Controller b ) => a.Equals( b );
