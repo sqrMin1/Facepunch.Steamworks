@@ -52,13 +52,6 @@ namespace Steamworks
             return SteamInput.Internal.GetActionSetHandle(actionSetName);
         }
 
-        public InputActionOrigin[] GetDigitalOrigins(string inputActionSet, string digitalActionHandle)
-        {
-            InputActionOrigin[] origins = new InputActionOrigin[8];
-            SteamInput.Internal.GetDigitalActionOrigins(Handle, SteamInput.Internal.GetActionSetHandle(inputActionSet), SteamInput.Internal.GetDigitalActionHandle(digitalActionHandle), ref origins);
-            return origins;
-        }
-
         public InputActionSetHandle_t GetCurrentActionSetLayer()
         {
             return SteamInput.Internal.GetCurrentActionSet(Handle);
