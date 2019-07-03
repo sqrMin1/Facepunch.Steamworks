@@ -66,7 +66,6 @@ internal class BaseType
 	}
 
 	public virtual string AsArgument() => IsVector ? $"[In,Out] {Ref}{TypeName.Trim( '*', ' ' )}[]  {VarName}" : $"{Ref}{TypeName.Trim( '*', ' ' )} {VarName}";
-	public virtual string AsWinArgument() => AsArgument();
 	public virtual string AsCallArgument() => $"{Ref}{VarName}";
 
 	public virtual string Return( string varname ) => $"return {varname};";
@@ -155,13 +154,6 @@ internal class StructType : BaseType
 		}
 	}
 
-	public override string AsWinArgument()
-	{
-		if ( WindowsSpecific )
-			return IsVector ? $"[In,Out] {Ref}{TypeName.Trim( '*', ' ' )}.Pack8[]  {VarName}" : $"{Ref}{TypeName.Trim( '*', ' ' )}.Pack8 {VarName}";
-
-		return AsArgument();
-	}
 
 	static string[] SpecialTypes = new string[]
 	{
@@ -224,11 +216,8 @@ internal class LongType : BaseType
 internal class ConstCharType : BaseType
 {
 	public override string TypeName => $"string";
-	public override string TypeNameFrom => $"string";
+	public override string TypeNameFrom => $"Utf8StringPointer";
 	public override string AsArgument() => $"[MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] {Ref}{TypeName} {VarName}";
-
-
-	public override string ReturnAttribute => "[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]";
 	public override string Ref => "";
 }
 

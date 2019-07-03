@@ -13,47 +13,44 @@ namespace Steamworks
 		
 		public override void InitInternals()
 		{
-			_GetFavoriteGameCount = Marshal.GetDelegateForFunctionPointer<FGetFavoriteGameCount>( Marshal.ReadIntPtr( VTable, 0) );
-			_GetFavoriteGame = Marshal.GetDelegateForFunctionPointer<FGetFavoriteGame>( Marshal.ReadIntPtr( VTable, 8) );
-			_AddFavoriteGame = Marshal.GetDelegateForFunctionPointer<FAddFavoriteGame>( Marshal.ReadIntPtr( VTable, 16) );
-			_RemoveFavoriteGame = Marshal.GetDelegateForFunctionPointer<FRemoveFavoriteGame>( Marshal.ReadIntPtr( VTable, 24) );
-			_RequestLobbyList = Marshal.GetDelegateForFunctionPointer<FRequestLobbyList>( Marshal.ReadIntPtr( VTable, 32) );
-			_AddRequestLobbyListStringFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListStringFilter>( Marshal.ReadIntPtr( VTable, 40) );
-			_AddRequestLobbyListNumericalFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListNumericalFilter>( Marshal.ReadIntPtr( VTable, 48) );
-			_AddRequestLobbyListNearValueFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListNearValueFilter>( Marshal.ReadIntPtr( VTable, 56) );
-			_AddRequestLobbyListFilterSlotsAvailable = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListFilterSlotsAvailable>( Marshal.ReadIntPtr( VTable, 64) );
-			_AddRequestLobbyListDistanceFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListDistanceFilter>( Marshal.ReadIntPtr( VTable, 72) );
-			_AddRequestLobbyListResultCountFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListResultCountFilter>( Marshal.ReadIntPtr( VTable, 80) );
-			_AddRequestLobbyListCompatibleMembersFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListCompatibleMembersFilter>( Marshal.ReadIntPtr( VTable, 88) );
-			_GetLobbyByIndex = Marshal.GetDelegateForFunctionPointer<FGetLobbyByIndex>( Marshal.ReadIntPtr( VTable, 96) );
-			_GetLobbyByIndex_Windows = Marshal.GetDelegateForFunctionPointer<FGetLobbyByIndex_Windows>( Marshal.ReadIntPtr( VTable, 96) );
-			_CreateLobby = Marshal.GetDelegateForFunctionPointer<FCreateLobby>( Marshal.ReadIntPtr( VTable, 104) );
-			_JoinLobby = Marshal.GetDelegateForFunctionPointer<FJoinLobby>( Marshal.ReadIntPtr( VTable, 112) );
-			_LeaveLobby = Marshal.GetDelegateForFunctionPointer<FLeaveLobby>( Marshal.ReadIntPtr( VTable, 120) );
-			_InviteUserToLobby = Marshal.GetDelegateForFunctionPointer<FInviteUserToLobby>( Marshal.ReadIntPtr( VTable, 128) );
-			_GetNumLobbyMembers = Marshal.GetDelegateForFunctionPointer<FGetNumLobbyMembers>( Marshal.ReadIntPtr( VTable, 136) );
-			_GetLobbyMemberByIndex = Marshal.GetDelegateForFunctionPointer<FGetLobbyMemberByIndex>( Marshal.ReadIntPtr( VTable, 144) );
-			_GetLobbyMemberByIndex_Windows = Marshal.GetDelegateForFunctionPointer<FGetLobbyMemberByIndex_Windows>( Marshal.ReadIntPtr( VTable, 144) );
-			_GetLobbyData = Marshal.GetDelegateForFunctionPointer<FGetLobbyData>( Marshal.ReadIntPtr( VTable, 152) );
-			_SetLobbyData = Marshal.GetDelegateForFunctionPointer<FSetLobbyData>( Marshal.ReadIntPtr( VTable, 160) );
-			_GetLobbyDataCount = Marshal.GetDelegateForFunctionPointer<FGetLobbyDataCount>( Marshal.ReadIntPtr( VTable, 168) );
-			_GetLobbyDataByIndex = Marshal.GetDelegateForFunctionPointer<FGetLobbyDataByIndex>( Marshal.ReadIntPtr( VTable, 176) );
-			_DeleteLobbyData = Marshal.GetDelegateForFunctionPointer<FDeleteLobbyData>( Marshal.ReadIntPtr( VTable, 184) );
-			_GetLobbyMemberData = Marshal.GetDelegateForFunctionPointer<FGetLobbyMemberData>( Marshal.ReadIntPtr( VTable, 192) );
-			_SetLobbyMemberData = Marshal.GetDelegateForFunctionPointer<FSetLobbyMemberData>( Marshal.ReadIntPtr( VTable, 200) );
-			_SendLobbyChatMsg = Marshal.GetDelegateForFunctionPointer<FSendLobbyChatMsg>( Marshal.ReadIntPtr( VTable, 208) );
-			_GetLobbyChatEntry = Marshal.GetDelegateForFunctionPointer<FGetLobbyChatEntry>( Marshal.ReadIntPtr( VTable, 216) );
-			_RequestLobbyData = Marshal.GetDelegateForFunctionPointer<FRequestLobbyData>( Marshal.ReadIntPtr( VTable, 224) );
-			_SetLobbyGameServer = Marshal.GetDelegateForFunctionPointer<FSetLobbyGameServer>( Marshal.ReadIntPtr( VTable, 232) );
-			_GetLobbyGameServer = Marshal.GetDelegateForFunctionPointer<FGetLobbyGameServer>( Marshal.ReadIntPtr( VTable, 240) );
-			_SetLobbyMemberLimit = Marshal.GetDelegateForFunctionPointer<FSetLobbyMemberLimit>( Marshal.ReadIntPtr( VTable, 248) );
-			_GetLobbyMemberLimit = Marshal.GetDelegateForFunctionPointer<FGetLobbyMemberLimit>( Marshal.ReadIntPtr( VTable, 256) );
-			_SetLobbyType = Marshal.GetDelegateForFunctionPointer<FSetLobbyType>( Marshal.ReadIntPtr( VTable, 264) );
-			_SetLobbyJoinable = Marshal.GetDelegateForFunctionPointer<FSetLobbyJoinable>( Marshal.ReadIntPtr( VTable, 272) );
-			_GetLobbyOwner = Marshal.GetDelegateForFunctionPointer<FGetLobbyOwner>( Marshal.ReadIntPtr( VTable, 280) );
-			_GetLobbyOwner_Windows = Marshal.GetDelegateForFunctionPointer<FGetLobbyOwner_Windows>( Marshal.ReadIntPtr( VTable, 280) );
-			_SetLobbyOwner = Marshal.GetDelegateForFunctionPointer<FSetLobbyOwner>( Marshal.ReadIntPtr( VTable, 288) );
-			_SetLinkedLobby = Marshal.GetDelegateForFunctionPointer<FSetLinkedLobby>( Marshal.ReadIntPtr( VTable, 296) );
+			_GetFavoriteGameCount = Marshal.GetDelegateForFunctionPointer<FGetFavoriteGameCount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 0 ) ) );
+			_GetFavoriteGame = Marshal.GetDelegateForFunctionPointer<FGetFavoriteGame>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 8 ) ) );
+			_AddFavoriteGame = Marshal.GetDelegateForFunctionPointer<FAddFavoriteGame>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 16 ) ) );
+			_RemoveFavoriteGame = Marshal.GetDelegateForFunctionPointer<FRemoveFavoriteGame>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 24 ) ) );
+			_RequestLobbyList = Marshal.GetDelegateForFunctionPointer<FRequestLobbyList>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 32 ) ) );
+			_AddRequestLobbyListStringFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListStringFilter>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 40 ) ) );
+			_AddRequestLobbyListNumericalFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListNumericalFilter>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 48 ) ) );
+			_AddRequestLobbyListNearValueFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListNearValueFilter>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 56 ) ) );
+			_AddRequestLobbyListFilterSlotsAvailable = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListFilterSlotsAvailable>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 64 ) ) );
+			_AddRequestLobbyListDistanceFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListDistanceFilter>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 72 ) ) );
+			_AddRequestLobbyListResultCountFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListResultCountFilter>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 80 ) ) );
+			_AddRequestLobbyListCompatibleMembersFilter = Marshal.GetDelegateForFunctionPointer<FAddRequestLobbyListCompatibleMembersFilter>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 88 ) ) );
+			_GetLobbyByIndex = Marshal.GetDelegateForFunctionPointer<FGetLobbyByIndex>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 96 ) ) );
+			_CreateLobby = Marshal.GetDelegateForFunctionPointer<FCreateLobby>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 104 ) ) );
+			_JoinLobby = Marshal.GetDelegateForFunctionPointer<FJoinLobby>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 112 ) ) );
+			_LeaveLobby = Marshal.GetDelegateForFunctionPointer<FLeaveLobby>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 120 ) ) );
+			_InviteUserToLobby = Marshal.GetDelegateForFunctionPointer<FInviteUserToLobby>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 128 ) ) );
+			_GetNumLobbyMembers = Marshal.GetDelegateForFunctionPointer<FGetNumLobbyMembers>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 136 ) ) );
+			_GetLobbyMemberByIndex = Marshal.GetDelegateForFunctionPointer<FGetLobbyMemberByIndex>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 144 ) ) );
+			_GetLobbyData = Marshal.GetDelegateForFunctionPointer<FGetLobbyData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 152 ) ) );
+			_SetLobbyData = Marshal.GetDelegateForFunctionPointer<FSetLobbyData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 160 ) ) );
+			_GetLobbyDataCount = Marshal.GetDelegateForFunctionPointer<FGetLobbyDataCount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 168 ) ) );
+			_GetLobbyDataByIndex = Marshal.GetDelegateForFunctionPointer<FGetLobbyDataByIndex>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 176 ) ) );
+			_DeleteLobbyData = Marshal.GetDelegateForFunctionPointer<FDeleteLobbyData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 184 ) ) );
+			_GetLobbyMemberData = Marshal.GetDelegateForFunctionPointer<FGetLobbyMemberData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 192 ) ) );
+			_SetLobbyMemberData = Marshal.GetDelegateForFunctionPointer<FSetLobbyMemberData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 200 ) ) );
+			_SendLobbyChatMsg = Marshal.GetDelegateForFunctionPointer<FSendLobbyChatMsg>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 208 ) ) );
+			_GetLobbyChatEntry = Marshal.GetDelegateForFunctionPointer<FGetLobbyChatEntry>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 216 ) ) );
+			_RequestLobbyData = Marshal.GetDelegateForFunctionPointer<FRequestLobbyData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 224 ) ) );
+			_SetLobbyGameServer = Marshal.GetDelegateForFunctionPointer<FSetLobbyGameServer>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 232 ) ) );
+			_GetLobbyGameServer = Marshal.GetDelegateForFunctionPointer<FGetLobbyGameServer>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 240 ) ) );
+			_SetLobbyMemberLimit = Marshal.GetDelegateForFunctionPointer<FSetLobbyMemberLimit>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 248 ) ) );
+			_GetLobbyMemberLimit = Marshal.GetDelegateForFunctionPointer<FGetLobbyMemberLimit>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 256 ) ) );
+			_SetLobbyType = Marshal.GetDelegateForFunctionPointer<FSetLobbyType>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 264 ) ) );
+			_SetLobbyJoinable = Marshal.GetDelegateForFunctionPointer<FSetLobbyJoinable>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 272 ) ) );
+			_GetLobbyOwner = Marshal.GetDelegateForFunctionPointer<FGetLobbyOwner>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 280 ) ) );
+			_SetLobbyOwner = Marshal.GetDelegateForFunctionPointer<FSetLobbyOwner>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 288 ) ) );
+			_SetLinkedLobby = Marshal.GetDelegateForFunctionPointer<FSetLinkedLobby>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 296 ) ) );
 		}
 		internal override void Shutdown()
 		{
@@ -72,14 +69,12 @@ namespace Steamworks
 			_AddRequestLobbyListResultCountFilter = null;
 			_AddRequestLobbyListCompatibleMembersFilter = null;
 			_GetLobbyByIndex = null;
-			_GetLobbyByIndex_Windows = null;
 			_CreateLobby = null;
 			_JoinLobby = null;
 			_LeaveLobby = null;
 			_InviteUserToLobby = null;
 			_GetNumLobbyMembers = null;
 			_GetLobbyMemberByIndex = null;
-			_GetLobbyMemberByIndex_Windows = null;
 			_GetLobbyData = null;
 			_SetLobbyData = null;
 			_GetLobbyDataCount = null;
@@ -97,13 +92,12 @@ namespace Steamworks
 			_SetLobbyType = null;
 			_SetLobbyJoinable = null;
 			_GetLobbyOwner = null;
-			_GetLobbyOwner_Windows = null;
 			_SetLobbyOwner = null;
 			_SetLinkedLobby = null;
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetFavoriteGameCount( IntPtr self );
 		private FGetFavoriteGameCount _GetFavoriteGameCount;
 		
@@ -114,7 +108,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetFavoriteGame( IntPtr self, int iGame, ref AppId pnAppID, ref uint pnIP, ref ushort pnConnPort, ref ushort pnQueryPort, ref uint punFlags, ref uint pRTime32LastPlayedOnServer );
 		private FGetFavoriteGame _GetFavoriteGame;
@@ -126,7 +120,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FAddFavoriteGame( IntPtr self, AppId nAppID, uint nIP, ushort nConnPort, ushort nQueryPort, uint unFlags, uint rTime32LastPlayedOnServer );
 		private FAddFavoriteGame _AddFavoriteGame;
 		
@@ -137,7 +131,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FRemoveFavoriteGame( IntPtr self, AppId nAppID, uint nIP, ushort nConnPort, ushort nQueryPort, uint unFlags );
 		private FRemoveFavoriteGame _RemoveFavoriteGame;
@@ -149,7 +143,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FRequestLobbyList( IntPtr self );
 		private FRequestLobbyList _RequestLobbyList;
 		
@@ -160,7 +154,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FAddRequestLobbyListStringFilter( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKeyToMatch, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchValueToMatch, LobbyComparison eComparisonType );
 		private FAddRequestLobbyListStringFilter _AddRequestLobbyListStringFilter;
 		
@@ -171,7 +165,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FAddRequestLobbyListNumericalFilter( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKeyToMatch, int nValueToMatch, LobbyComparison eComparisonType );
 		private FAddRequestLobbyListNumericalFilter _AddRequestLobbyListNumericalFilter;
 		
@@ -182,7 +176,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FAddRequestLobbyListNearValueFilter( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKeyToMatch, int nValueToBeCloseTo );
 		private FAddRequestLobbyListNearValueFilter _AddRequestLobbyListNearValueFilter;
 		
@@ -193,7 +187,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FAddRequestLobbyListFilterSlotsAvailable( IntPtr self, int nSlotsAvailable );
 		private FAddRequestLobbyListFilterSlotsAvailable _AddRequestLobbyListFilterSlotsAvailable;
 		
@@ -204,7 +198,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FAddRequestLobbyListDistanceFilter( IntPtr self, LobbyDistanceFilter eLobbyDistanceFilter );
 		private FAddRequestLobbyListDistanceFilter _AddRequestLobbyListDistanceFilter;
 		
@@ -215,7 +209,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FAddRequestLobbyListResultCountFilter( IntPtr self, int cMaxResults );
 		private FAddRequestLobbyListResultCountFilter _AddRequestLobbyListResultCountFilter;
 		
@@ -226,7 +220,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FAddRequestLobbyListCompatibleMembersFilter( IntPtr self, SteamId steamIDLobby );
 		private FAddRequestLobbyListCompatibleMembersFilter _AddRequestLobbyListCompatibleMembersFilter;
 		
@@ -237,28 +231,28 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		#if PLATFORM_WIN
+		private delegate void FGetLobbyByIndex( IntPtr self, ref SteamId retVal, int iLobby );
+		#else
 		private delegate SteamId FGetLobbyByIndex( IntPtr self, int iLobby );
+		#endif
 		private FGetLobbyByIndex _GetLobbyByIndex;
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		private delegate void FGetLobbyByIndex_Windows( IntPtr self, ref SteamId retVal, int iLobby );
-		private FGetLobbyByIndex_Windows _GetLobbyByIndex_Windows;
 		
 		#endregion
 		internal SteamId GetLobbyByIndex( int iLobby )
 		{
-			if ( Config.Os == OsType.Windows )
-			{
-				var retVal = default( SteamId );
-				_GetLobbyByIndex_Windows( Self, ref retVal, iLobby );
-				return retVal;
-			}
-			
+			#if PLATFORM_WIN
+			var retVal = default( SteamId );
+			_GetLobbyByIndex( Self, ref retVal, iLobby );
+			return retVal;
+			#else
 			return _GetLobbyByIndex( Self, iLobby );
+			#endif
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FCreateLobby( IntPtr self, LobbyType eLobbyType, int cMaxMembers );
 		private FCreateLobby _CreateLobby;
 		
@@ -269,7 +263,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FJoinLobby( IntPtr self, SteamId steamIDLobby );
 		private FJoinLobby _JoinLobby;
 		
@@ -280,7 +274,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FLeaveLobby( IntPtr self, SteamId steamIDLobby );
 		private FLeaveLobby _LeaveLobby;
 		
@@ -291,7 +285,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FInviteUserToLobby( IntPtr self, SteamId steamIDLobby, SteamId steamIDInvitee );
 		private FInviteUserToLobby _InviteUserToLobby;
@@ -303,7 +297,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetNumLobbyMembers( IntPtr self, SteamId steamIDLobby );
 		private FGetNumLobbyMembers _GetNumLobbyMembers;
 		
@@ -314,30 +308,29 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		#if PLATFORM_WIN
+		private delegate void FGetLobbyMemberByIndex( IntPtr self, ref SteamId retVal, SteamId steamIDLobby, int iMember );
+		#else
 		private delegate SteamId FGetLobbyMemberByIndex( IntPtr self, SteamId steamIDLobby, int iMember );
+		#endif
 		private FGetLobbyMemberByIndex _GetLobbyMemberByIndex;
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		private delegate void FGetLobbyMemberByIndex_Windows( IntPtr self, ref SteamId retVal, SteamId steamIDLobby, int iMember );
-		private FGetLobbyMemberByIndex_Windows _GetLobbyMemberByIndex_Windows;
 		
 		#endregion
 		internal SteamId GetLobbyMemberByIndex( SteamId steamIDLobby, int iMember )
 		{
-			if ( Config.Os == OsType.Windows )
-			{
-				var retVal = default( SteamId );
-				_GetLobbyMemberByIndex_Windows( Self, ref retVal, steamIDLobby, iMember );
-				return retVal;
-			}
-			
+			#if PLATFORM_WIN
+			var retVal = default( SteamId );
+			_GetLobbyMemberByIndex( Self, ref retVal, steamIDLobby, iMember );
+			return retVal;
+			#else
 			return _GetLobbyMemberByIndex( Self, steamIDLobby, iMember );
+			#endif
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]
-		private delegate string FGetLobbyData( IntPtr self, SteamId steamIDLobby, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey );
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		private delegate Utf8StringPointer FGetLobbyData( IntPtr self, SteamId steamIDLobby, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey );
 		private FGetLobbyData _GetLobbyData;
 		
 		#endregion
@@ -347,7 +340,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetLobbyData( IntPtr self, SteamId steamIDLobby, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchValue );
 		private FSetLobbyData _SetLobbyData;
@@ -359,7 +352,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetLobbyDataCount( IntPtr self, SteamId steamIDLobby );
 		private FGetLobbyDataCount _GetLobbyDataCount;
 		
@@ -370,7 +363,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetLobbyDataByIndex( IntPtr self, SteamId steamIDLobby, int iLobbyData, StringBuilder pchKey, int cchKeyBufferSize, StringBuilder pchValue, int cchValueBufferSize );
 		private FGetLobbyDataByIndex _GetLobbyDataByIndex;
@@ -382,7 +375,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FDeleteLobbyData( IntPtr self, SteamId steamIDLobby, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey );
 		private FDeleteLobbyData _DeleteLobbyData;
@@ -394,9 +387,8 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]
-		private delegate string FGetLobbyMemberData( IntPtr self, SteamId steamIDLobby, SteamId steamIDUser, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey );
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		private delegate Utf8StringPointer FGetLobbyMemberData( IntPtr self, SteamId steamIDLobby, SteamId steamIDUser, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey );
 		private FGetLobbyMemberData _GetLobbyMemberData;
 		
 		#endregion
@@ -406,7 +398,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetLobbyMemberData( IntPtr self, SteamId steamIDLobby, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchValue );
 		private FSetLobbyMemberData _SetLobbyMemberData;
 		
@@ -417,7 +409,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSendLobbyChatMsg( IntPtr self, SteamId steamIDLobby, IntPtr pvMsgBody, int cubMsgBody );
 		private FSendLobbyChatMsg _SendLobbyChatMsg;
@@ -429,7 +421,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetLobbyChatEntry( IntPtr self, SteamId steamIDLobby, int iChatID, ref SteamId pSteamIDUser, IntPtr pvData, int cubData, ref ChatEntryType peChatEntryType );
 		private FGetLobbyChatEntry _GetLobbyChatEntry;
 		
@@ -440,7 +432,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FRequestLobbyData( IntPtr self, SteamId steamIDLobby );
 		private FRequestLobbyData _RequestLobbyData;
@@ -452,7 +444,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetLobbyGameServer( IntPtr self, SteamId steamIDLobby, uint unGameServerIP, ushort unGameServerPort, SteamId steamIDGameServer );
 		private FSetLobbyGameServer _SetLobbyGameServer;
 		
@@ -463,7 +455,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetLobbyGameServer( IntPtr self, SteamId steamIDLobby, ref uint punGameServerIP, ref ushort punGameServerPort, ref SteamId psteamIDGameServer );
 		private FGetLobbyGameServer _GetLobbyGameServer;
@@ -475,7 +467,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetLobbyMemberLimit( IntPtr self, SteamId steamIDLobby, int cMaxMembers );
 		private FSetLobbyMemberLimit _SetLobbyMemberLimit;
@@ -487,7 +479,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetLobbyMemberLimit( IntPtr self, SteamId steamIDLobby );
 		private FGetLobbyMemberLimit _GetLobbyMemberLimit;
 		
@@ -498,7 +490,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetLobbyType( IntPtr self, SteamId steamIDLobby, LobbyType eLobbyType );
 		private FSetLobbyType _SetLobbyType;
@@ -510,7 +502,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetLobbyJoinable( IntPtr self, SteamId steamIDLobby, [MarshalAs( UnmanagedType.U1 )] bool bLobbyJoinable );
 		private FSetLobbyJoinable _SetLobbyJoinable;
@@ -522,28 +514,28 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		#if PLATFORM_WIN
+		private delegate void FGetLobbyOwner( IntPtr self, ref SteamId retVal, SteamId steamIDLobby );
+		#else
 		private delegate SteamId FGetLobbyOwner( IntPtr self, SteamId steamIDLobby );
+		#endif
 		private FGetLobbyOwner _GetLobbyOwner;
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		private delegate void FGetLobbyOwner_Windows( IntPtr self, ref SteamId retVal, SteamId steamIDLobby );
-		private FGetLobbyOwner_Windows _GetLobbyOwner_Windows;
 		
 		#endregion
 		internal SteamId GetLobbyOwner( SteamId steamIDLobby )
 		{
-			if ( Config.Os == OsType.Windows )
-			{
-				var retVal = default( SteamId );
-				_GetLobbyOwner_Windows( Self, ref retVal, steamIDLobby );
-				return retVal;
-			}
-			
+			#if PLATFORM_WIN
+			var retVal = default( SteamId );
+			_GetLobbyOwner( Self, ref retVal, steamIDLobby );
+			return retVal;
+			#else
 			return _GetLobbyOwner( Self, steamIDLobby );
+			#endif
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetLobbyOwner( IntPtr self, SteamId steamIDLobby, SteamId steamIDNewOwner );
 		private FSetLobbyOwner _SetLobbyOwner;
@@ -555,7 +547,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetLinkedLobby( IntPtr self, SteamId steamIDLobby, SteamId steamIDLobbyDependent );
 		private FSetLinkedLobby _SetLinkedLobby;

@@ -13,35 +13,35 @@ namespace Steamworks
 		
 		public override void InitInternals()
 		{
-			_CreateListenSocketIP = Marshal.GetDelegateForFunctionPointer<FCreateListenSocketIP>( Marshal.ReadIntPtr( VTable, 0) );
-			_ConnectByIPAddress = Marshal.GetDelegateForFunctionPointer<FConnectByIPAddress>( Marshal.ReadIntPtr( VTable, 8) );
-			_CreateListenSocketP2P = Marshal.GetDelegateForFunctionPointer<FCreateListenSocketP2P>( Marshal.ReadIntPtr( VTable, 16) );
-			_ConnectP2P = Marshal.GetDelegateForFunctionPointer<FConnectP2P>( Marshal.ReadIntPtr( VTable, 24) );
-			_AcceptConnection = Marshal.GetDelegateForFunctionPointer<FAcceptConnection>( Marshal.ReadIntPtr( VTable, 32) );
-			_CloseConnection = Marshal.GetDelegateForFunctionPointer<FCloseConnection>( Marshal.ReadIntPtr( VTable, 40) );
-			_CloseListenSocket = Marshal.GetDelegateForFunctionPointer<FCloseListenSocket>( Marshal.ReadIntPtr( VTable, 48) );
-			_SetConnectionUserData = Marshal.GetDelegateForFunctionPointer<FSetConnectionUserData>( Marshal.ReadIntPtr( VTable, 56) );
-			_GetConnectionUserData = Marshal.GetDelegateForFunctionPointer<FGetConnectionUserData>( Marshal.ReadIntPtr( VTable, 64) );
-			_SetConnectionName = Marshal.GetDelegateForFunctionPointer<FSetConnectionName>( Marshal.ReadIntPtr( VTable, 72) );
-			_GetConnectionName = Marshal.GetDelegateForFunctionPointer<FGetConnectionName>( Marshal.ReadIntPtr( VTable, 80) );
-			_SendMessageToConnection = Marshal.GetDelegateForFunctionPointer<FSendMessageToConnection>( Marshal.ReadIntPtr( VTable, 88) );
-			_FlushMessagesOnConnection = Marshal.GetDelegateForFunctionPointer<FFlushMessagesOnConnection>( Marshal.ReadIntPtr( VTable, 96) );
-			_ReceiveMessagesOnConnection = Marshal.GetDelegateForFunctionPointer<FReceiveMessagesOnConnection>( Marshal.ReadIntPtr( VTable, 104) );
-			_ReceiveMessagesOnListenSocket = Marshal.GetDelegateForFunctionPointer<FReceiveMessagesOnListenSocket>( Marshal.ReadIntPtr( VTable, 112) );
-			_GetConnectionInfo = Marshal.GetDelegateForFunctionPointer<FGetConnectionInfo>( Marshal.ReadIntPtr( VTable, 120) );
-			_GetQuickConnectionStatus = Marshal.GetDelegateForFunctionPointer<FGetQuickConnectionStatus>( Marshal.ReadIntPtr( VTable, 128) );
-			_GetDetailedConnectionStatus = Marshal.GetDelegateForFunctionPointer<FGetDetailedConnectionStatus>( Marshal.ReadIntPtr( VTable, 136) );
-			_GetListenSocketAddress = Marshal.GetDelegateForFunctionPointer<FGetListenSocketAddress>( Marshal.ReadIntPtr( VTable, 144) );
-			_CreateSocketPair = Marshal.GetDelegateForFunctionPointer<FCreateSocketPair>( Marshal.ReadIntPtr( VTable, 152) );
-			_GetIdentity = Marshal.GetDelegateForFunctionPointer<FGetIdentity>( Marshal.ReadIntPtr( VTable, 160) );
-			_ReceivedRelayAuthTicket = Marshal.GetDelegateForFunctionPointer<FReceivedRelayAuthTicket>( Marshal.ReadIntPtr( VTable, 168) );
-			_FindRelayAuthTicketForServer = Marshal.GetDelegateForFunctionPointer<FFindRelayAuthTicketForServer>( Marshal.ReadIntPtr( VTable, 176) );
-			_ConnectToHostedDedicatedServer = Marshal.GetDelegateForFunctionPointer<FConnectToHostedDedicatedServer>( Marshal.ReadIntPtr( VTable, 184) );
-			_GetHostedDedicatedServerPort = Marshal.GetDelegateForFunctionPointer<FGetHostedDedicatedServerPort>( Marshal.ReadIntPtr( VTable, 192) );
-			_GetHostedDedicatedServerPOPID = Marshal.GetDelegateForFunctionPointer<FGetHostedDedicatedServerPOPID>( Marshal.ReadIntPtr( VTable, 200) );
-			_GetHostedDedicatedServerAddress = Marshal.GetDelegateForFunctionPointer<FGetHostedDedicatedServerAddress>( Marshal.ReadIntPtr( VTable, 208) );
-			_CreateHostedDedicatedServerListenSocket = Marshal.GetDelegateForFunctionPointer<FCreateHostedDedicatedServerListenSocket>( Marshal.ReadIntPtr( VTable, 216) );
-			_RunCallbacks = Marshal.GetDelegateForFunctionPointer<FRunCallbacks>( Marshal.ReadIntPtr( VTable, 224) );
+			_CreateListenSocketIP = Marshal.GetDelegateForFunctionPointer<FCreateListenSocketIP>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 0 ) ) );
+			_ConnectByIPAddress = Marshal.GetDelegateForFunctionPointer<FConnectByIPAddress>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 8 ) ) );
+			_CreateListenSocketP2P = Marshal.GetDelegateForFunctionPointer<FCreateListenSocketP2P>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 16 ) ) );
+			_ConnectP2P = Marshal.GetDelegateForFunctionPointer<FConnectP2P>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 24 ) ) );
+			_AcceptConnection = Marshal.GetDelegateForFunctionPointer<FAcceptConnection>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 32 ) ) );
+			_CloseConnection = Marshal.GetDelegateForFunctionPointer<FCloseConnection>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 40 ) ) );
+			_CloseListenSocket = Marshal.GetDelegateForFunctionPointer<FCloseListenSocket>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 48 ) ) );
+			_SetConnectionUserData = Marshal.GetDelegateForFunctionPointer<FSetConnectionUserData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 56 ) ) );
+			_GetConnectionUserData = Marshal.GetDelegateForFunctionPointer<FGetConnectionUserData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 64 ) ) );
+			_SetConnectionName = Marshal.GetDelegateForFunctionPointer<FSetConnectionName>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 72 ) ) );
+			_GetConnectionName = Marshal.GetDelegateForFunctionPointer<FGetConnectionName>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 80 ) ) );
+			_SendMessageToConnection = Marshal.GetDelegateForFunctionPointer<FSendMessageToConnection>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 88 ) ) );
+			_FlushMessagesOnConnection = Marshal.GetDelegateForFunctionPointer<FFlushMessagesOnConnection>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 96 ) ) );
+			_ReceiveMessagesOnConnection = Marshal.GetDelegateForFunctionPointer<FReceiveMessagesOnConnection>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 104 ) ) );
+			_ReceiveMessagesOnListenSocket = Marshal.GetDelegateForFunctionPointer<FReceiveMessagesOnListenSocket>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 112 ) ) );
+			_GetConnectionInfo = Marshal.GetDelegateForFunctionPointer<FGetConnectionInfo>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 120 ) ) );
+			_GetQuickConnectionStatus = Marshal.GetDelegateForFunctionPointer<FGetQuickConnectionStatus>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 128 ) ) );
+			_GetDetailedConnectionStatus = Marshal.GetDelegateForFunctionPointer<FGetDetailedConnectionStatus>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 136 ) ) );
+			_GetListenSocketAddress = Marshal.GetDelegateForFunctionPointer<FGetListenSocketAddress>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 144 ) ) );
+			_CreateSocketPair = Marshal.GetDelegateForFunctionPointer<FCreateSocketPair>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 152 ) ) );
+			_GetIdentity = Marshal.GetDelegateForFunctionPointer<FGetIdentity>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 160 ) ) );
+			_ReceivedRelayAuthTicket = Marshal.GetDelegateForFunctionPointer<FReceivedRelayAuthTicket>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 168 ) ) );
+			_FindRelayAuthTicketForServer = Marshal.GetDelegateForFunctionPointer<FFindRelayAuthTicketForServer>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 176 ) ) );
+			_ConnectToHostedDedicatedServer = Marshal.GetDelegateForFunctionPointer<FConnectToHostedDedicatedServer>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 184 ) ) );
+			_GetHostedDedicatedServerPort = Marshal.GetDelegateForFunctionPointer<FGetHostedDedicatedServerPort>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 192 ) ) );
+			_GetHostedDedicatedServerPOPID = Marshal.GetDelegateForFunctionPointer<FGetHostedDedicatedServerPOPID>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 200 ) ) );
+			_GetHostedDedicatedServerAddress = Marshal.GetDelegateForFunctionPointer<FGetHostedDedicatedServerAddress>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 208 ) ) );
+			_CreateHostedDedicatedServerListenSocket = Marshal.GetDelegateForFunctionPointer<FCreateHostedDedicatedServerListenSocket>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 216 ) ) );
+			_RunCallbacks = Marshal.GetDelegateForFunctionPointer<FRunCallbacks>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 224 ) ) );
 		}
 		internal override void Shutdown()
 		{
@@ -79,7 +79,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Socket FCreateListenSocketIP( IntPtr self, ref NetAddress localAddress );
 		private FCreateListenSocketIP _CreateListenSocketIP;
 		
@@ -90,7 +90,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Connection FConnectByIPAddress( IntPtr self, ref NetAddress address );
 		private FConnectByIPAddress _ConnectByIPAddress;
 		
@@ -101,7 +101,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Socket FCreateListenSocketP2P( IntPtr self, int nVirtualPort );
 		private FCreateListenSocketP2P _CreateListenSocketP2P;
 		
@@ -112,7 +112,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Connection FConnectP2P( IntPtr self, ref NetIdentity identityRemote, int nVirtualPort );
 		private FConnectP2P _ConnectP2P;
 		
@@ -123,7 +123,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Result FAcceptConnection( IntPtr self, Connection hConn );
 		private FAcceptConnection _AcceptConnection;
 		
@@ -134,7 +134,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FCloseConnection( IntPtr self, Connection hPeer, int nReason, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszDebug, [MarshalAs( UnmanagedType.U1 )] bool bEnableLinger );
 		private FCloseConnection _CloseConnection;
@@ -146,7 +146,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FCloseListenSocket( IntPtr self, Socket hSocket );
 		private FCloseListenSocket _CloseListenSocket;
@@ -158,7 +158,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetConnectionUserData( IntPtr self, Connection hPeer, long nUserData );
 		private FSetConnectionUserData _SetConnectionUserData;
@@ -170,7 +170,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate long FGetConnectionUserData( IntPtr self, Connection hPeer );
 		private FGetConnectionUserData _GetConnectionUserData;
 		
@@ -181,7 +181,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetConnectionName( IntPtr self, Connection hPeer, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszName );
 		private FSetConnectionName _SetConnectionName;
 		
@@ -192,7 +192,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetConnectionName( IntPtr self, Connection hPeer, StringBuilder pszName, int nMaxLen );
 		private FGetConnectionName _GetConnectionName;
@@ -204,7 +204,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Result FSendMessageToConnection( IntPtr self, Connection hConn, IntPtr pData, uint cbData, int nSendFlags );
 		private FSendMessageToConnection _SendMessageToConnection;
 		
@@ -215,7 +215,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Result FFlushMessagesOnConnection( IntPtr self, Connection hConn );
 		private FFlushMessagesOnConnection _FlushMessagesOnConnection;
 		
@@ -226,7 +226,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FReceiveMessagesOnConnection( IntPtr self, Connection hConn, IntPtr ppOutMessages, int nMaxMessages );
 		private FReceiveMessagesOnConnection _ReceiveMessagesOnConnection;
 		
@@ -237,7 +237,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FReceiveMessagesOnListenSocket( IntPtr self, Socket hSocket, IntPtr ppOutMessages, int nMaxMessages );
 		private FReceiveMessagesOnListenSocket _ReceiveMessagesOnListenSocket;
 		
@@ -248,7 +248,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetConnectionInfo( IntPtr self, Connection hConn, ref ConnectionInfo pInfo );
 		private FGetConnectionInfo _GetConnectionInfo;
@@ -260,7 +260,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetQuickConnectionStatus( IntPtr self, Connection hConn, ref SteamNetworkingQuickConnectionStatus pStats );
 		private FGetQuickConnectionStatus _GetQuickConnectionStatus;
@@ -272,7 +272,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetDetailedConnectionStatus( IntPtr self, Connection hConn, StringBuilder pszBuf, int cbBuf );
 		private FGetDetailedConnectionStatus _GetDetailedConnectionStatus;
 		
@@ -283,7 +283,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetListenSocketAddress( IntPtr self, Socket hSocket, ref NetAddress address );
 		private FGetListenSocketAddress _GetListenSocketAddress;
@@ -295,7 +295,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FCreateSocketPair( IntPtr self, [In,Out] Connection[]  pOutConnection1, [In,Out] Connection[]  pOutConnection2, [MarshalAs( UnmanagedType.U1 )] bool bUseNetworkLoopback, ref NetIdentity pIdentity1, ref NetIdentity pIdentity2 );
 		private FCreateSocketPair _CreateSocketPair;
@@ -307,7 +307,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetIdentity( IntPtr self, ref NetIdentity pIdentity );
 		private FGetIdentity _GetIdentity;
@@ -319,7 +319,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FReceivedRelayAuthTicket( IntPtr self, IntPtr pvTicket, int cbTicket, [In,Out] SteamDatagramRelayAuthTicket[]  pOutParsedTicket );
 		private FReceivedRelayAuthTicket _ReceivedRelayAuthTicket;
@@ -331,7 +331,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FFindRelayAuthTicketForServer( IntPtr self, ref NetIdentity identityGameServer, int nVirtualPort, [In,Out] SteamDatagramRelayAuthTicket[]  pOutParsedTicket );
 		private FFindRelayAuthTicketForServer _FindRelayAuthTicketForServer;
 		
@@ -342,7 +342,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Connection FConnectToHostedDedicatedServer( IntPtr self, ref NetIdentity identityTarget, int nVirtualPort );
 		private FConnectToHostedDedicatedServer _ConnectToHostedDedicatedServer;
 		
@@ -353,7 +353,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate ushort FGetHostedDedicatedServerPort( IntPtr self );
 		private FGetHostedDedicatedServerPort _GetHostedDedicatedServerPort;
 		
@@ -364,7 +364,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamNetworkingPOPID FGetHostedDedicatedServerPOPID( IntPtr self );
 		private FGetHostedDedicatedServerPOPID _GetHostedDedicatedServerPOPID;
 		
@@ -375,7 +375,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetHostedDedicatedServerAddress( IntPtr self, ref SteamDatagramHostedAddress pRouting );
 		private FGetHostedDedicatedServerAddress _GetHostedDedicatedServerAddress;
@@ -387,7 +387,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Socket FCreateHostedDedicatedServerListenSocket( IntPtr self, int nVirtualPort );
 		private FCreateHostedDedicatedServerListenSocket _CreateHostedDedicatedServerListenSocket;
 		
@@ -398,7 +398,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FRunCallbacks( IntPtr self, IntPtr pCallbacks );
 		private FRunCallbacks _RunCallbacks;
 		

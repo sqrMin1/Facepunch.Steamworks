@@ -13,52 +13,50 @@ namespace Steamworks
 		
 		public override void InitInternals()
 		{
-			_InitGameServer = Marshal.GetDelegateForFunctionPointer<FInitGameServer>( Marshal.ReadIntPtr( VTable, 0) );
-			_SetProduct = Marshal.GetDelegateForFunctionPointer<FSetProduct>( Marshal.ReadIntPtr( VTable, 8) );
-			_SetGameDescription = Marshal.GetDelegateForFunctionPointer<FSetGameDescription>( Marshal.ReadIntPtr( VTable, 16) );
-			_SetModDir = Marshal.GetDelegateForFunctionPointer<FSetModDir>( Marshal.ReadIntPtr( VTable, 24) );
-			_SetDedicatedServer = Marshal.GetDelegateForFunctionPointer<FSetDedicatedServer>( Marshal.ReadIntPtr( VTable, 32) );
-			_LogOn = Marshal.GetDelegateForFunctionPointer<FLogOn>( Marshal.ReadIntPtr( VTable, 40) );
-			_LogOnAnonymous = Marshal.GetDelegateForFunctionPointer<FLogOnAnonymous>( Marshal.ReadIntPtr( VTable, 48) );
-			_LogOff = Marshal.GetDelegateForFunctionPointer<FLogOff>( Marshal.ReadIntPtr( VTable, 56) );
-			_BLoggedOn = Marshal.GetDelegateForFunctionPointer<FBLoggedOn>( Marshal.ReadIntPtr( VTable, 64) );
-			_BSecure = Marshal.GetDelegateForFunctionPointer<FBSecure>( Marshal.ReadIntPtr( VTable, 72) );
-			_GetSteamID = Marshal.GetDelegateForFunctionPointer<FGetSteamID>( Marshal.ReadIntPtr( VTable, 80) );
-			_GetSteamID_Windows = Marshal.GetDelegateForFunctionPointer<FGetSteamID_Windows>( Marshal.ReadIntPtr( VTable, 80) );
-			_WasRestartRequested = Marshal.GetDelegateForFunctionPointer<FWasRestartRequested>( Marshal.ReadIntPtr( VTable, 88) );
-			_SetMaxPlayerCount = Marshal.GetDelegateForFunctionPointer<FSetMaxPlayerCount>( Marshal.ReadIntPtr( VTable, 96) );
-			_SetBotPlayerCount = Marshal.GetDelegateForFunctionPointer<FSetBotPlayerCount>( Marshal.ReadIntPtr( VTable, 104) );
-			_SetServerName = Marshal.GetDelegateForFunctionPointer<FSetServerName>( Marshal.ReadIntPtr( VTable, 112) );
-			_SetMapName = Marshal.GetDelegateForFunctionPointer<FSetMapName>( Marshal.ReadIntPtr( VTable, 120) );
-			_SetPasswordProtected = Marshal.GetDelegateForFunctionPointer<FSetPasswordProtected>( Marshal.ReadIntPtr( VTable, 128) );
-			_SetSpectatorPort = Marshal.GetDelegateForFunctionPointer<FSetSpectatorPort>( Marshal.ReadIntPtr( VTable, 136) );
-			_SetSpectatorServerName = Marshal.GetDelegateForFunctionPointer<FSetSpectatorServerName>( Marshal.ReadIntPtr( VTable, 144) );
-			_ClearAllKeyValues = Marshal.GetDelegateForFunctionPointer<FClearAllKeyValues>( Marshal.ReadIntPtr( VTable, 152) );
-			_SetKeyValue = Marshal.GetDelegateForFunctionPointer<FSetKeyValue>( Marshal.ReadIntPtr( VTable, 160) );
-			_SetGameTags = Marshal.GetDelegateForFunctionPointer<FSetGameTags>( Marshal.ReadIntPtr( VTable, 168) );
-			_SetGameData = Marshal.GetDelegateForFunctionPointer<FSetGameData>( Marshal.ReadIntPtr( VTable, 176) );
-			_SetRegion = Marshal.GetDelegateForFunctionPointer<FSetRegion>( Marshal.ReadIntPtr( VTable, 184) );
-			_SendUserConnectAndAuthenticate = Marshal.GetDelegateForFunctionPointer<FSendUserConnectAndAuthenticate>( Marshal.ReadIntPtr( VTable, 192) );
-			_CreateUnauthenticatedUserConnection = Marshal.GetDelegateForFunctionPointer<FCreateUnauthenticatedUserConnection>( Marshal.ReadIntPtr( VTable, 200) );
-			_CreateUnauthenticatedUserConnection_Windows = Marshal.GetDelegateForFunctionPointer<FCreateUnauthenticatedUserConnection_Windows>( Marshal.ReadIntPtr( VTable, 200) );
-			_SendUserDisconnect = Marshal.GetDelegateForFunctionPointer<FSendUserDisconnect>( Marshal.ReadIntPtr( VTable, 208) );
-			_BUpdateUserData = Marshal.GetDelegateForFunctionPointer<FBUpdateUserData>( Marshal.ReadIntPtr( VTable, 216) );
-			_GetAuthSessionTicket = Marshal.GetDelegateForFunctionPointer<FGetAuthSessionTicket>( Marshal.ReadIntPtr( VTable, 224) );
-			_BeginAuthSession = Marshal.GetDelegateForFunctionPointer<FBeginAuthSession>( Marshal.ReadIntPtr( VTable, 232) );
-			_EndAuthSession = Marshal.GetDelegateForFunctionPointer<FEndAuthSession>( Marshal.ReadIntPtr( VTable, 240) );
-			_CancelAuthTicket = Marshal.GetDelegateForFunctionPointer<FCancelAuthTicket>( Marshal.ReadIntPtr( VTable, 248) );
-			_UserHasLicenseForApp = Marshal.GetDelegateForFunctionPointer<FUserHasLicenseForApp>( Marshal.ReadIntPtr( VTable, 256) );
-			_RequestUserGroupStatus = Marshal.GetDelegateForFunctionPointer<FRequestUserGroupStatus>( Marshal.ReadIntPtr( VTable, 264) );
-			_GetGameplayStats = Marshal.GetDelegateForFunctionPointer<FGetGameplayStats>( Marshal.ReadIntPtr( VTable, 272) );
-			_GetServerReputation = Marshal.GetDelegateForFunctionPointer<FGetServerReputation>( Marshal.ReadIntPtr( VTable, 280) );
-			_GetPublicIP = Marshal.GetDelegateForFunctionPointer<FGetPublicIP>( Marshal.ReadIntPtr( VTable, 288) );
-			_HandleIncomingPacket = Marshal.GetDelegateForFunctionPointer<FHandleIncomingPacket>( Marshal.ReadIntPtr( VTable, 296) );
-			_GetNextOutgoingPacket = Marshal.GetDelegateForFunctionPointer<FGetNextOutgoingPacket>( Marshal.ReadIntPtr( VTable, 304) );
-			_EnableHeartbeats = Marshal.GetDelegateForFunctionPointer<FEnableHeartbeats>( Marshal.ReadIntPtr( VTable, 312) );
-			_SetHeartbeatInterval = Marshal.GetDelegateForFunctionPointer<FSetHeartbeatInterval>( Marshal.ReadIntPtr( VTable, 320) );
-			_ForceHeartbeat = Marshal.GetDelegateForFunctionPointer<FForceHeartbeat>( Marshal.ReadIntPtr( VTable, 328) );
-			_AssociateWithClan = Marshal.GetDelegateForFunctionPointer<FAssociateWithClan>( Marshal.ReadIntPtr( VTable, 336) );
-			_ComputeNewPlayerCompatibility = Marshal.GetDelegateForFunctionPointer<FComputeNewPlayerCompatibility>( Marshal.ReadIntPtr( VTable, 344) );
+			_InitGameServer = Marshal.GetDelegateForFunctionPointer<FInitGameServer>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 0 ) ) );
+			_SetProduct = Marshal.GetDelegateForFunctionPointer<FSetProduct>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 8 ) ) );
+			_SetGameDescription = Marshal.GetDelegateForFunctionPointer<FSetGameDescription>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 16 ) ) );
+			_SetModDir = Marshal.GetDelegateForFunctionPointer<FSetModDir>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 24 ) ) );
+			_SetDedicatedServer = Marshal.GetDelegateForFunctionPointer<FSetDedicatedServer>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 32 ) ) );
+			_LogOn = Marshal.GetDelegateForFunctionPointer<FLogOn>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 40 ) ) );
+			_LogOnAnonymous = Marshal.GetDelegateForFunctionPointer<FLogOnAnonymous>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 48 ) ) );
+			_LogOff = Marshal.GetDelegateForFunctionPointer<FLogOff>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 56 ) ) );
+			_BLoggedOn = Marshal.GetDelegateForFunctionPointer<FBLoggedOn>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 64 ) ) );
+			_BSecure = Marshal.GetDelegateForFunctionPointer<FBSecure>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 72 ) ) );
+			_GetSteamID = Marshal.GetDelegateForFunctionPointer<FGetSteamID>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 80 ) ) );
+			_WasRestartRequested = Marshal.GetDelegateForFunctionPointer<FWasRestartRequested>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 88 ) ) );
+			_SetMaxPlayerCount = Marshal.GetDelegateForFunctionPointer<FSetMaxPlayerCount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 96 ) ) );
+			_SetBotPlayerCount = Marshal.GetDelegateForFunctionPointer<FSetBotPlayerCount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 104 ) ) );
+			_SetServerName = Marshal.GetDelegateForFunctionPointer<FSetServerName>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 112 ) ) );
+			_SetMapName = Marshal.GetDelegateForFunctionPointer<FSetMapName>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 120 ) ) );
+			_SetPasswordProtected = Marshal.GetDelegateForFunctionPointer<FSetPasswordProtected>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 128 ) ) );
+			_SetSpectatorPort = Marshal.GetDelegateForFunctionPointer<FSetSpectatorPort>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 136 ) ) );
+			_SetSpectatorServerName = Marshal.GetDelegateForFunctionPointer<FSetSpectatorServerName>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 144 ) ) );
+			_ClearAllKeyValues = Marshal.GetDelegateForFunctionPointer<FClearAllKeyValues>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 152 ) ) );
+			_SetKeyValue = Marshal.GetDelegateForFunctionPointer<FSetKeyValue>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 160 ) ) );
+			_SetGameTags = Marshal.GetDelegateForFunctionPointer<FSetGameTags>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 168 ) ) );
+			_SetGameData = Marshal.GetDelegateForFunctionPointer<FSetGameData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 176 ) ) );
+			_SetRegion = Marshal.GetDelegateForFunctionPointer<FSetRegion>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 184 ) ) );
+			_SendUserConnectAndAuthenticate = Marshal.GetDelegateForFunctionPointer<FSendUserConnectAndAuthenticate>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 192 ) ) );
+			_CreateUnauthenticatedUserConnection = Marshal.GetDelegateForFunctionPointer<FCreateUnauthenticatedUserConnection>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 200 ) ) );
+			_SendUserDisconnect = Marshal.GetDelegateForFunctionPointer<FSendUserDisconnect>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 208 ) ) );
+			_BUpdateUserData = Marshal.GetDelegateForFunctionPointer<FBUpdateUserData>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 216 ) ) );
+			_GetAuthSessionTicket = Marshal.GetDelegateForFunctionPointer<FGetAuthSessionTicket>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 224 ) ) );
+			_BeginAuthSession = Marshal.GetDelegateForFunctionPointer<FBeginAuthSession>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 232 ) ) );
+			_EndAuthSession = Marshal.GetDelegateForFunctionPointer<FEndAuthSession>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 240 ) ) );
+			_CancelAuthTicket = Marshal.GetDelegateForFunctionPointer<FCancelAuthTicket>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 248 ) ) );
+			_UserHasLicenseForApp = Marshal.GetDelegateForFunctionPointer<FUserHasLicenseForApp>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 256 ) ) );
+			_RequestUserGroupStatus = Marshal.GetDelegateForFunctionPointer<FRequestUserGroupStatus>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 264 ) ) );
+			_GetGameplayStats = Marshal.GetDelegateForFunctionPointer<FGetGameplayStats>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 272 ) ) );
+			_GetServerReputation = Marshal.GetDelegateForFunctionPointer<FGetServerReputation>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 280 ) ) );
+			_GetPublicIP = Marshal.GetDelegateForFunctionPointer<FGetPublicIP>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 288 ) ) );
+			_HandleIncomingPacket = Marshal.GetDelegateForFunctionPointer<FHandleIncomingPacket>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 296 ) ) );
+			_GetNextOutgoingPacket = Marshal.GetDelegateForFunctionPointer<FGetNextOutgoingPacket>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 304 ) ) );
+			_EnableHeartbeats = Marshal.GetDelegateForFunctionPointer<FEnableHeartbeats>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 312 ) ) );
+			_SetHeartbeatInterval = Marshal.GetDelegateForFunctionPointer<FSetHeartbeatInterval>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 320 ) ) );
+			_ForceHeartbeat = Marshal.GetDelegateForFunctionPointer<FForceHeartbeat>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 328 ) ) );
+			_AssociateWithClan = Marshal.GetDelegateForFunctionPointer<FAssociateWithClan>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 336 ) ) );
+			_ComputeNewPlayerCompatibility = Marshal.GetDelegateForFunctionPointer<FComputeNewPlayerCompatibility>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 344 ) ) );
 		}
 		internal override void Shutdown()
 		{
@@ -75,7 +73,6 @@ namespace Steamworks
 			_BLoggedOn = null;
 			_BSecure = null;
 			_GetSteamID = null;
-			_GetSteamID_Windows = null;
 			_WasRestartRequested = null;
 			_SetMaxPlayerCount = null;
 			_SetBotPlayerCount = null;
@@ -91,7 +88,6 @@ namespace Steamworks
 			_SetRegion = null;
 			_SendUserConnectAndAuthenticate = null;
 			_CreateUnauthenticatedUserConnection = null;
-			_CreateUnauthenticatedUserConnection_Windows = null;
 			_SendUserDisconnect = null;
 			_BUpdateUserData = null;
 			_GetAuthSessionTicket = null;
@@ -113,7 +109,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FInitGameServer( IntPtr self, uint unIP, ushort usGamePort, ushort usQueryPort, uint unFlags, AppId nGameAppId, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchVersionString );
 		private FInitGameServer _InitGameServer;
@@ -125,7 +121,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetProduct( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszProduct );
 		private FSetProduct _SetProduct;
 		
@@ -136,7 +132,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetGameDescription( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszGameDescription );
 		private FSetGameDescription _SetGameDescription;
 		
@@ -147,7 +143,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetModDir( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszModDir );
 		private FSetModDir _SetModDir;
 		
@@ -158,7 +154,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetDedicatedServer( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bDedicated );
 		private FSetDedicatedServer _SetDedicatedServer;
 		
@@ -169,7 +165,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FLogOn( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszToken );
 		private FLogOn _LogOn;
 		
@@ -180,7 +176,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FLogOnAnonymous( IntPtr self );
 		private FLogOnAnonymous _LogOnAnonymous;
 		
@@ -191,7 +187,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FLogOff( IntPtr self );
 		private FLogOff _LogOff;
 		
@@ -202,7 +198,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBLoggedOn( IntPtr self );
 		private FBLoggedOn _BLoggedOn;
@@ -214,7 +210,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBSecure( IntPtr self );
 		private FBSecure _BSecure;
@@ -226,28 +222,28 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		#if PLATFORM_WIN
+		private delegate void FGetSteamID( IntPtr self, ref SteamId retVal );
+		#else
 		private delegate SteamId FGetSteamID( IntPtr self );
+		#endif
 		private FGetSteamID _GetSteamID;
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		private delegate void FGetSteamID_Windows( IntPtr self, ref SteamId retVal );
-		private FGetSteamID_Windows _GetSteamID_Windows;
 		
 		#endregion
 		internal SteamId GetSteamID()
 		{
-			if ( Config.Os == OsType.Windows )
-			{
-				var retVal = default( SteamId );
-				_GetSteamID_Windows( Self, ref retVal );
-				return retVal;
-			}
-			
+			#if PLATFORM_WIN
+			var retVal = default( SteamId );
+			_GetSteamID( Self, ref retVal );
+			return retVal;
+			#else
 			return _GetSteamID( Self );
+			#endif
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FWasRestartRequested( IntPtr self );
 		private FWasRestartRequested _WasRestartRequested;
@@ -259,7 +255,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetMaxPlayerCount( IntPtr self, int cPlayersMax );
 		private FSetMaxPlayerCount _SetMaxPlayerCount;
 		
@@ -270,7 +266,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetBotPlayerCount( IntPtr self, int cBotplayers );
 		private FSetBotPlayerCount _SetBotPlayerCount;
 		
@@ -281,7 +277,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetServerName( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszServerName );
 		private FSetServerName _SetServerName;
 		
@@ -292,7 +288,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetMapName( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszMapName );
 		private FSetMapName _SetMapName;
 		
@@ -303,7 +299,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetPasswordProtected( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bPasswordProtected );
 		private FSetPasswordProtected _SetPasswordProtected;
 		
@@ -314,7 +310,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetSpectatorPort( IntPtr self, ushort unSpectatorPort );
 		private FSetSpectatorPort _SetSpectatorPort;
 		
@@ -325,7 +321,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetSpectatorServerName( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszSpectatorServerName );
 		private FSetSpectatorServerName _SetSpectatorServerName;
 		
@@ -336,7 +332,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FClearAllKeyValues( IntPtr self );
 		private FClearAllKeyValues _ClearAllKeyValues;
 		
@@ -347,7 +343,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetKeyValue( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pKey, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pValue );
 		private FSetKeyValue _SetKeyValue;
 		
@@ -358,7 +354,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetGameTags( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchGameTags );
 		private FSetGameTags _SetGameTags;
 		
@@ -369,7 +365,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetGameData( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchGameData );
 		private FSetGameData _SetGameData;
 		
@@ -380,7 +376,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetRegion( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszRegion );
 		private FSetRegion _SetRegion;
 		
@@ -391,7 +387,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSendUserConnectAndAuthenticate( IntPtr self, uint unIPClient, IntPtr pvAuthBlob, uint cubAuthBlobSize, ref SteamId pSteamIDUser );
 		private FSendUserConnectAndAuthenticate _SendUserConnectAndAuthenticate;
@@ -403,28 +399,28 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		#if PLATFORM_WIN
+		private delegate void FCreateUnauthenticatedUserConnection( IntPtr self, ref SteamId retVal );
+		#else
 		private delegate SteamId FCreateUnauthenticatedUserConnection( IntPtr self );
+		#endif
 		private FCreateUnauthenticatedUserConnection _CreateUnauthenticatedUserConnection;
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		private delegate void FCreateUnauthenticatedUserConnection_Windows( IntPtr self, ref SteamId retVal );
-		private FCreateUnauthenticatedUserConnection_Windows _CreateUnauthenticatedUserConnection_Windows;
 		
 		#endregion
 		internal SteamId CreateUnauthenticatedUserConnection()
 		{
-			if ( Config.Os == OsType.Windows )
-			{
-				var retVal = default( SteamId );
-				_CreateUnauthenticatedUserConnection_Windows( Self, ref retVal );
-				return retVal;
-			}
-			
+			#if PLATFORM_WIN
+			var retVal = default( SteamId );
+			_CreateUnauthenticatedUserConnection( Self, ref retVal );
+			return retVal;
+			#else
 			return _CreateUnauthenticatedUserConnection( Self );
+			#endif
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSendUserDisconnect( IntPtr self, SteamId steamIDUser );
 		private FSendUserDisconnect _SendUserDisconnect;
 		
@@ -435,7 +431,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBUpdateUserData( IntPtr self, SteamId steamIDUser, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchPlayerName, uint uScore );
 		private FBUpdateUserData _BUpdateUserData;
@@ -447,7 +443,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate HAuthTicket FGetAuthSessionTicket( IntPtr self, IntPtr pTicket, int cbMaxTicket, ref uint pcbTicket );
 		private FGetAuthSessionTicket _GetAuthSessionTicket;
 		
@@ -458,7 +454,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate BeginAuthResult FBeginAuthSession( IntPtr self, IntPtr pAuthTicket, int cbAuthTicket, SteamId steamID );
 		private FBeginAuthSession _BeginAuthSession;
 		
@@ -469,7 +465,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FEndAuthSession( IntPtr self, SteamId steamID );
 		private FEndAuthSession _EndAuthSession;
 		
@@ -480,7 +476,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FCancelAuthTicket( IntPtr self, HAuthTicket hAuthTicket );
 		private FCancelAuthTicket _CancelAuthTicket;
 		
@@ -491,7 +487,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate UserHasLicenseForAppResult FUserHasLicenseForApp( IntPtr self, SteamId steamID, AppId appID );
 		private FUserHasLicenseForApp _UserHasLicenseForApp;
 		
@@ -502,7 +498,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FRequestUserGroupStatus( IntPtr self, SteamId steamIDUser, SteamId steamIDGroup );
 		private FRequestUserGroupStatus _RequestUserGroupStatus;
@@ -514,7 +510,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FGetGameplayStats( IntPtr self );
 		private FGetGameplayStats _GetGameplayStats;
 		
@@ -525,7 +521,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FGetServerReputation( IntPtr self );
 		private FGetServerReputation _GetServerReputation;
 		
@@ -536,7 +532,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetPublicIP( IntPtr self );
 		private FGetPublicIP _GetPublicIP;
 		
@@ -547,7 +543,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FHandleIncomingPacket( IntPtr self, IntPtr pData, int cbData, uint srcIP, ushort srcPort );
 		private FHandleIncomingPacket _HandleIncomingPacket;
@@ -559,7 +555,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetNextOutgoingPacket( IntPtr self, IntPtr pOut, int cbMaxOut, ref uint pNetAdr, ref ushort pPort );
 		private FGetNextOutgoingPacket _GetNextOutgoingPacket;
 		
@@ -570,7 +566,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FEnableHeartbeats( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bActive );
 		private FEnableHeartbeats _EnableHeartbeats;
 		
@@ -581,7 +577,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetHeartbeatInterval( IntPtr self, int iHeartbeatInterval );
 		private FSetHeartbeatInterval _SetHeartbeatInterval;
 		
@@ -592,7 +588,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FForceHeartbeat( IntPtr self );
 		private FForceHeartbeat _ForceHeartbeat;
 		
@@ -603,7 +599,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FAssociateWithClan( IntPtr self, SteamId steamIDClan );
 		private FAssociateWithClan _AssociateWithClan;
 		
@@ -614,7 +610,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FComputeNewPlayerCompatibility( IntPtr self, SteamId steamIDNewPlayer );
 		private FComputeNewPlayerCompatibility _ComputeNewPlayerCompatibility;
 		
