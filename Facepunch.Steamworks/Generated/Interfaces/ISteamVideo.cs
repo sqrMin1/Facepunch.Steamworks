@@ -13,10 +13,10 @@ namespace Steamworks
 		
 		public override void InitInternals()
 		{
-			_GetVideoURL = Marshal.GetDelegateForFunctionPointer<FGetVideoURL>( Marshal.ReadIntPtr( VTable, 0) );
-			_IsBroadcasting = Marshal.GetDelegateForFunctionPointer<FIsBroadcasting>( Marshal.ReadIntPtr( VTable, 8) );
-			_GetOPFSettings = Marshal.GetDelegateForFunctionPointer<FGetOPFSettings>( Marshal.ReadIntPtr( VTable, 16) );
-			_GetOPFStringForApp = Marshal.GetDelegateForFunctionPointer<FGetOPFStringForApp>( Marshal.ReadIntPtr( VTable, 24) );
+			_GetVideoURL = Marshal.GetDelegateForFunctionPointer<FGetVideoURL>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 0 ) ) );
+			_IsBroadcasting = Marshal.GetDelegateForFunctionPointer<FIsBroadcasting>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 8 ) ) );
+			_GetOPFSettings = Marshal.GetDelegateForFunctionPointer<FGetOPFSettings>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 16 ) ) );
+			_GetOPFStringForApp = Marshal.GetDelegateForFunctionPointer<FGetOPFStringForApp>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 24 ) ) );
 		}
 		internal override void Shutdown()
 		{
@@ -29,7 +29,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FGetVideoURL( IntPtr self, AppId unVideoAppID );
 		private FGetVideoURL _GetVideoURL;
 		
@@ -40,7 +40,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsBroadcasting( IntPtr self, ref int pnNumViewers );
 		private FIsBroadcasting _IsBroadcasting;
@@ -52,7 +52,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FGetOPFSettings( IntPtr self, AppId unVideoAppID );
 		private FGetOPFSettings _GetOPFSettings;
 		
@@ -63,7 +63,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetOPFStringForApp( IntPtr self, AppId unVideoAppID, StringBuilder pchBuffer, ref int pnBufferSize );
 		private FGetOPFStringForApp _GetOPFStringForApp;

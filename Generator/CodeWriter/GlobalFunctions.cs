@@ -27,20 +27,11 @@ namespace Generator
 			{
 				StartBlock( $"internal static class {startingWith}" );
 				{
-					StartBlock( $"internal static class Win64" );
+					StartBlock( $"internal static class Native" );
 					{
 						foreach ( var func in functions )
 						{
-							WriteMarshalledFunction( func, "steam_api64" );
-						}
-					}
-					EndBlock();
-
-					StartBlock( $"internal static class Posix" );
-					{
-						foreach ( var func in functions )
-						{
-							WriteMarshalledFunction( func, "libsteam_api" );
+							WriteMarshalledFunction( func );
 						}
 					}
 					EndBlock();
@@ -87,56 +78,28 @@ namespace Generator
 			{
 				var callargs = string.Join( ", ", args.Select( x => x.AsCallArgument() ) );
 
-				StartBlock( "if ( Config.Os == OsType.Windows )" );
+				if ( returnType.IsReturnedWeird )
 				{
-
-					if ( returnType.IsReturnedWeird )
-					{
-						WriteLine( $"var retVal = default( {returnType.TypeName} );" );
-						WriteLine( $"Win64.{func.Name}( ref retVal, {callargs} );" );
-						WriteLine( $"{returnType.Return( "retVal" )}" );
-					}
-					else if ( returnType.IsVoid )
-					{
-						WriteLine( $"Win64.{func.Name}( {callargs} );" );
-					}
-					else
-					{
-						var v = $"Win64.{func.Name}( {callargs} )";
-
-						WriteLine( returnType.Return( v ) );
-					}
+					WriteLine( $"var retVal = default( {returnType.TypeName} );" );
+					WriteLine( $"Native.{func.Name}( ref retVal, {callargs} );" );
+					WriteLine( $"{returnType.Return( "retVal" )}" );
 				}
-				Else( " if ( Config.Os == OsType.Posix )" );
+				else if ( returnType.IsVoid )
 				{
-					if ( returnType.IsReturnedWeird )
-					{
-						WriteLine( $"var retVal = default( {returnType.TypeName} );" );
-						WriteLine( $"Posix.{func.Name}( ref retVal, {callargs} );" );
-						WriteLine( $"{returnType.Return( "retVal" )}" );
-					}
-					else if ( returnType.IsVoid )
-					{
-						WriteLine( $"Posix.{func.Name}( {callargs} );" );
-					}
-					else
-					{
-						var v = $"Posix.{func.Name}( {callargs} )";
-
-						WriteLine( returnType.Return( v ) );
-					}
+					WriteLine( $"Native.{func.Name}( {callargs} );" );
 				}
-				Else();
+				else
 				{
-					WriteLine( "throw new System.Exception( \"this platform isn't supported\" );" );
+					var v = $"Native.{func.Name}( {callargs} )";
+
+					WriteLine( returnType.Return( v ) );
 				}
-				EndBlock();
 			}
 			EndBlock();
 
 		}
 
-		private void WriteMarshalledFunction( SteamApiDefinition.MethodDef func, string dllName )
+		private void WriteMarshalledFunction( SteamApiDefinition.MethodDef func )
 		{
 			var returnType = BaseType.Parse( func.ReturnType );
 			returnType.Func = func.Name;
@@ -153,7 +116,7 @@ namespace Generator
 			var argstr = string.Join( ", ", args.Select( x => x.AsArgument() ) );
 			var delegateargstr = string.Join( ", ", args.Select( x => x.AsArgument() ) );
 
-			WriteLine( $"[DllImport( \"{dllName}\", EntryPoint = \"{func.Name}\", CallingConvention = CallingConvention.Cdecl )]" );
+			WriteLine( $"[DllImport( Platform.LibraryName, EntryPoint = \"{func.Name}\", CallingConvention = CallingConvention.Cdecl )]" );
 
 			if ( returnType.ReturnAttribute != null )
 				WriteLine( returnType.ReturnAttribute );
@@ -161,69 +124,5 @@ namespace Generator
 			WriteLine( $"public static extern {(returnType.IsReturnedWeird ? "void" : returnType.TypeNameFrom)} {func.Name}( {delegateargstr} );" );
 			WriteLine();
 		}
-			/*
-
-	*/
-
-			/*
-			var returnType = BaseType.Parse( func.ReturnType );
-			returnType.Func = func.Name;
-
-			var args = func.Arguments.Select( x =>
-			{
-				var bt = BaseType.Parse( x.Value, x.Key );
-				bt.Func = func.Name;
-				return bt;
-			} ).ToArray();
-			var argstr = string.Join( ", ", args.Select( x => x.AsArgument() ) );
-			var delegateargstr = string.Join( ", ", args.Select( x => x.AsArgument() ) );
-
-			if ( returnType.IsReturnedWeird  )
-			{
-				delegateargstr = $"ref {returnType.TypeName} retVal, {delegateargstr}";
-				delegateargstr = delegateargstr.Trim( ',', ' ' );
-			}
-
-			if ( returnType is SteamApiCallType sap )
-			{
-				sap.CallResult = func.CallResult;
-			}
-
-			WriteLine( $"#region FunctionMeta" );
-
-			WriteLine( $"[UnmanagedFunctionPointer( CallingConvention.ThisCall )]" );
-
-			if ( returnType.ReturnAttribute != null)
-				WriteLine( returnType.ReturnAttribute );
-
-			WriteLine( $"private delegate {(returnType.IsReturnedWeird?"void":returnType.TypeNameFrom)} F{func.Name}( IntPtr self, {delegateargstr} );".Replace( "( IntPtr self,  )", "( IntPtr self )" ) );
-			WriteLine( $"private F{func.Name} _{func.Name};" );
-			WriteLine();
-			WriteLine( $"#endregion" );
-
-			StartBlock( $"internal {returnType.ReturnType} {func.Name}( {argstr} )".Replace( "(  )", "()" ) );
-			{
-				var callargs = string.Join( ", ", args.Select( x => x.AsCallArgument() ) );
-
-				if ( returnType.IsReturnedWeird )
-				{
-					WriteLine( $"var retVal = default( {returnType.TypeName} );" );
-					WriteLine( $"_{func.Name}( Self, ref retVal, {callargs} );".Replace( ",  );", " );" ) );
-					WriteLine( $"{returnType.Return( "retVal" )}" );
-				}
-				else if ( returnType.IsVoid )
-				{
-					WriteLine( $"_{func.Name}( Self, {callargs} );".Replace( "( Self,  )", "( Self )" ) );
-				}
-				else
-				{
-					var v = $"_{func.Name}( Self, {callargs} )".Replace( "( Self,  )", "( Self )" );
-
-					WriteLine( returnType.Return( v ) );
-				}
-			}
-			EndBlock();
-			*/
-		
 	}
 }

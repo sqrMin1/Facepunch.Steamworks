@@ -13,15 +13,15 @@ namespace Steamworks
 		
 		public override void InitInternals()
 		{
-			_WriteScreenshot = Marshal.GetDelegateForFunctionPointer<FWriteScreenshot>( Marshal.ReadIntPtr( VTable, 0) );
-			_AddScreenshotToLibrary = Marshal.GetDelegateForFunctionPointer<FAddScreenshotToLibrary>( Marshal.ReadIntPtr( VTable, 8) );
-			_TriggerScreenshot = Marshal.GetDelegateForFunctionPointer<FTriggerScreenshot>( Marshal.ReadIntPtr( VTable, 16) );
-			_HookScreenshots = Marshal.GetDelegateForFunctionPointer<FHookScreenshots>( Marshal.ReadIntPtr( VTable, 24) );
-			_SetLocation = Marshal.GetDelegateForFunctionPointer<FSetLocation>( Marshal.ReadIntPtr( VTable, 32) );
-			_TagUser = Marshal.GetDelegateForFunctionPointer<FTagUser>( Marshal.ReadIntPtr( VTable, 40) );
-			_TagPublishedFile = Marshal.GetDelegateForFunctionPointer<FTagPublishedFile>( Marshal.ReadIntPtr( VTable, 48) );
-			_IsScreenshotsHooked = Marshal.GetDelegateForFunctionPointer<FIsScreenshotsHooked>( Marshal.ReadIntPtr( VTable, 56) );
-			_AddVRScreenshotToLibrary = Marshal.GetDelegateForFunctionPointer<FAddVRScreenshotToLibrary>( Marshal.ReadIntPtr( VTable, 64) );
+			_WriteScreenshot = Marshal.GetDelegateForFunctionPointer<FWriteScreenshot>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 0 ) ) );
+			_AddScreenshotToLibrary = Marshal.GetDelegateForFunctionPointer<FAddScreenshotToLibrary>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 8 ) ) );
+			_TriggerScreenshot = Marshal.GetDelegateForFunctionPointer<FTriggerScreenshot>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 16 ) ) );
+			_HookScreenshots = Marshal.GetDelegateForFunctionPointer<FHookScreenshots>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 24 ) ) );
+			_SetLocation = Marshal.GetDelegateForFunctionPointer<FSetLocation>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 32 ) ) );
+			_TagUser = Marshal.GetDelegateForFunctionPointer<FTagUser>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 40 ) ) );
+			_TagPublishedFile = Marshal.GetDelegateForFunctionPointer<FTagPublishedFile>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 48 ) ) );
+			_IsScreenshotsHooked = Marshal.GetDelegateForFunctionPointer<FIsScreenshotsHooked>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 56 ) ) );
+			_AddVRScreenshotToLibrary = Marshal.GetDelegateForFunctionPointer<FAddVRScreenshotToLibrary>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 64 ) ) );
 		}
 		internal override void Shutdown()
 		{
@@ -39,7 +39,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate ScreenshotHandle FWriteScreenshot( IntPtr self, IntPtr pubRGB, uint cubRGB, int nWidth, int nHeight );
 		private FWriteScreenshot _WriteScreenshot;
 		
@@ -50,7 +50,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate ScreenshotHandle FAddScreenshotToLibrary( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFilename, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchThumbnailFilename, int nWidth, int nHeight );
 		private FAddScreenshotToLibrary _AddScreenshotToLibrary;
 		
@@ -61,7 +61,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FTriggerScreenshot( IntPtr self );
 		private FTriggerScreenshot _TriggerScreenshot;
 		
@@ -72,7 +72,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FHookScreenshots( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bHook );
 		private FHookScreenshots _HookScreenshots;
 		
@@ -83,7 +83,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetLocation( IntPtr self, ScreenshotHandle hScreenshot, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchLocation );
 		private FSetLocation _SetLocation;
@@ -95,7 +95,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FTagUser( IntPtr self, ScreenshotHandle hScreenshot, SteamId steamID );
 		private FTagUser _TagUser;
@@ -107,7 +107,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FTagPublishedFile( IntPtr self, ScreenshotHandle hScreenshot, PublishedFileId unPublishedFileID );
 		private FTagPublishedFile _TagPublishedFile;
@@ -119,7 +119,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsScreenshotsHooked( IntPtr self );
 		private FIsScreenshotsHooked _IsScreenshotsHooked;
@@ -131,7 +131,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate ScreenshotHandle FAddVRScreenshotToLibrary( IntPtr self, VRScreenshotType eType, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFilename, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchVRFilename );
 		private FAddVRScreenshotToLibrary _AddVRScreenshotToLibrary;
 		

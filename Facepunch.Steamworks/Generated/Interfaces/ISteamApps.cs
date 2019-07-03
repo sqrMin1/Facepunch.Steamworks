@@ -13,35 +13,34 @@ namespace Steamworks
 		
 		public override void InitInternals()
 		{
-			_BIsSubscribed = Marshal.GetDelegateForFunctionPointer<FBIsSubscribed>( Marshal.ReadIntPtr( VTable, 0) );
-			_BIsLowViolence = Marshal.GetDelegateForFunctionPointer<FBIsLowViolence>( Marshal.ReadIntPtr( VTable, 8) );
-			_BIsCybercafe = Marshal.GetDelegateForFunctionPointer<FBIsCybercafe>( Marshal.ReadIntPtr( VTable, 16) );
-			_BIsVACBanned = Marshal.GetDelegateForFunctionPointer<FBIsVACBanned>( Marshal.ReadIntPtr( VTable, 24) );
-			_GetCurrentGameLanguage = Marshal.GetDelegateForFunctionPointer<FGetCurrentGameLanguage>( Marshal.ReadIntPtr( VTable, 32) );
-			_GetAvailableGameLanguages = Marshal.GetDelegateForFunctionPointer<FGetAvailableGameLanguages>( Marshal.ReadIntPtr( VTable, 40) );
-			_BIsSubscribedApp = Marshal.GetDelegateForFunctionPointer<FBIsSubscribedApp>( Marshal.ReadIntPtr( VTable, 48) );
-			_BIsDlcInstalled = Marshal.GetDelegateForFunctionPointer<FBIsDlcInstalled>( Marshal.ReadIntPtr( VTable, 56) );
-			_GetEarliestPurchaseUnixTime = Marshal.GetDelegateForFunctionPointer<FGetEarliestPurchaseUnixTime>( Marshal.ReadIntPtr( VTable, 64) );
-			_BIsSubscribedFromFreeWeekend = Marshal.GetDelegateForFunctionPointer<FBIsSubscribedFromFreeWeekend>( Marshal.ReadIntPtr( VTable, 72) );
-			_GetDLCCount = Marshal.GetDelegateForFunctionPointer<FGetDLCCount>( Marshal.ReadIntPtr( VTable, 80) );
-			_BGetDLCDataByIndex = Marshal.GetDelegateForFunctionPointer<FBGetDLCDataByIndex>( Marshal.ReadIntPtr( VTable, 88) );
-			_InstallDLC = Marshal.GetDelegateForFunctionPointer<FInstallDLC>( Marshal.ReadIntPtr( VTable, 96) );
-			_UninstallDLC = Marshal.GetDelegateForFunctionPointer<FUninstallDLC>( Marshal.ReadIntPtr( VTable, 104) );
-			_RequestAppProofOfPurchaseKey = Marshal.GetDelegateForFunctionPointer<FRequestAppProofOfPurchaseKey>( Marshal.ReadIntPtr( VTable, 112) );
-			_GetCurrentBetaName = Marshal.GetDelegateForFunctionPointer<FGetCurrentBetaName>( Marshal.ReadIntPtr( VTable, 120) );
-			_MarkContentCorrupt = Marshal.GetDelegateForFunctionPointer<FMarkContentCorrupt>( Marshal.ReadIntPtr( VTable, 128) );
-			_GetInstalledDepots = Marshal.GetDelegateForFunctionPointer<FGetInstalledDepots>( Marshal.ReadIntPtr( VTable, 136) );
-			_GetAppInstallDir = Marshal.GetDelegateForFunctionPointer<FGetAppInstallDir>( Marshal.ReadIntPtr( VTable, 144) );
-			_BIsAppInstalled = Marshal.GetDelegateForFunctionPointer<FBIsAppInstalled>( Marshal.ReadIntPtr( VTable, 152) );
-			_GetAppOwner = Marshal.GetDelegateForFunctionPointer<FGetAppOwner>( Marshal.ReadIntPtr( VTable, 160) );
-			_GetAppOwner_Windows = Marshal.GetDelegateForFunctionPointer<FGetAppOwner_Windows>( Marshal.ReadIntPtr( VTable, 160) );
-			_GetLaunchQueryParam = Marshal.GetDelegateForFunctionPointer<FGetLaunchQueryParam>( Marshal.ReadIntPtr( VTable, 168) );
-			_GetDlcDownloadProgress = Marshal.GetDelegateForFunctionPointer<FGetDlcDownloadProgress>( Marshal.ReadIntPtr( VTable, 176) );
-			_GetAppBuildId = Marshal.GetDelegateForFunctionPointer<FGetAppBuildId>( Marshal.ReadIntPtr( VTable, 184) );
-			_RequestAllProofOfPurchaseKeys = Marshal.GetDelegateForFunctionPointer<FRequestAllProofOfPurchaseKeys>( Marshal.ReadIntPtr( VTable, 192) );
-			_GetFileDetails = Marshal.GetDelegateForFunctionPointer<FGetFileDetails>( Marshal.ReadIntPtr( VTable, 200) );
-			_GetLaunchCommandLine = Marshal.GetDelegateForFunctionPointer<FGetLaunchCommandLine>( Marshal.ReadIntPtr( VTable, 208) );
-			_BIsSubscribedFromFamilySharing = Marshal.GetDelegateForFunctionPointer<FBIsSubscribedFromFamilySharing>( Marshal.ReadIntPtr( VTable, 216) );
+			_BIsSubscribed = Marshal.GetDelegateForFunctionPointer<FBIsSubscribed>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 0 ) ) );
+			_BIsLowViolence = Marshal.GetDelegateForFunctionPointer<FBIsLowViolence>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 8 ) ) );
+			_BIsCybercafe = Marshal.GetDelegateForFunctionPointer<FBIsCybercafe>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 16 ) ) );
+			_BIsVACBanned = Marshal.GetDelegateForFunctionPointer<FBIsVACBanned>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 24 ) ) );
+			_GetCurrentGameLanguage = Marshal.GetDelegateForFunctionPointer<FGetCurrentGameLanguage>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 32 ) ) );
+			_GetAvailableGameLanguages = Marshal.GetDelegateForFunctionPointer<FGetAvailableGameLanguages>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 40 ) ) );
+			_BIsSubscribedApp = Marshal.GetDelegateForFunctionPointer<FBIsSubscribedApp>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 48 ) ) );
+			_BIsDlcInstalled = Marshal.GetDelegateForFunctionPointer<FBIsDlcInstalled>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 56 ) ) );
+			_GetEarliestPurchaseUnixTime = Marshal.GetDelegateForFunctionPointer<FGetEarliestPurchaseUnixTime>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 64 ) ) );
+			_BIsSubscribedFromFreeWeekend = Marshal.GetDelegateForFunctionPointer<FBIsSubscribedFromFreeWeekend>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 72 ) ) );
+			_GetDLCCount = Marshal.GetDelegateForFunctionPointer<FGetDLCCount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 80 ) ) );
+			_BGetDLCDataByIndex = Marshal.GetDelegateForFunctionPointer<FBGetDLCDataByIndex>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 88 ) ) );
+			_InstallDLC = Marshal.GetDelegateForFunctionPointer<FInstallDLC>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 96 ) ) );
+			_UninstallDLC = Marshal.GetDelegateForFunctionPointer<FUninstallDLC>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 104 ) ) );
+			_RequestAppProofOfPurchaseKey = Marshal.GetDelegateForFunctionPointer<FRequestAppProofOfPurchaseKey>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 112 ) ) );
+			_GetCurrentBetaName = Marshal.GetDelegateForFunctionPointer<FGetCurrentBetaName>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 120 ) ) );
+			_MarkContentCorrupt = Marshal.GetDelegateForFunctionPointer<FMarkContentCorrupt>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 128 ) ) );
+			_GetInstalledDepots = Marshal.GetDelegateForFunctionPointer<FGetInstalledDepots>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 136 ) ) );
+			_GetAppInstallDir = Marshal.GetDelegateForFunctionPointer<FGetAppInstallDir>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 144 ) ) );
+			_BIsAppInstalled = Marshal.GetDelegateForFunctionPointer<FBIsAppInstalled>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 152 ) ) );
+			_GetAppOwner = Marshal.GetDelegateForFunctionPointer<FGetAppOwner>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 160 ) ) );
+			_GetLaunchQueryParam = Marshal.GetDelegateForFunctionPointer<FGetLaunchQueryParam>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 168 ) ) );
+			_GetDlcDownloadProgress = Marshal.GetDelegateForFunctionPointer<FGetDlcDownloadProgress>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 176 ) ) );
+			_GetAppBuildId = Marshal.GetDelegateForFunctionPointer<FGetAppBuildId>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 184 ) ) );
+			_RequestAllProofOfPurchaseKeys = Marshal.GetDelegateForFunctionPointer<FRequestAllProofOfPurchaseKeys>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 192 ) ) );
+			_GetFileDetails = Marshal.GetDelegateForFunctionPointer<FGetFileDetails>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 200 ) ) );
+			_GetLaunchCommandLine = Marshal.GetDelegateForFunctionPointer<FGetLaunchCommandLine>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 208 ) ) );
+			_BIsSubscribedFromFamilySharing = Marshal.GetDelegateForFunctionPointer<FBIsSubscribedFromFamilySharing>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 216 ) ) );
 		}
 		internal override void Shutdown()
 		{
@@ -68,7 +67,6 @@ namespace Steamworks
 			_GetAppInstallDir = null;
 			_BIsAppInstalled = null;
 			_GetAppOwner = null;
-			_GetAppOwner_Windows = null;
 			_GetLaunchQueryParam = null;
 			_GetDlcDownloadProgress = null;
 			_GetAppBuildId = null;
@@ -79,7 +77,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsSubscribed( IntPtr self );
 		private FBIsSubscribed _BIsSubscribed;
@@ -91,7 +89,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsLowViolence( IntPtr self );
 		private FBIsLowViolence _BIsLowViolence;
@@ -103,7 +101,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsCybercafe( IntPtr self );
 		private FBIsCybercafe _BIsCybercafe;
@@ -115,7 +113,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsVACBanned( IntPtr self );
 		private FBIsVACBanned _BIsVACBanned;
@@ -127,9 +125,8 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]
-		private delegate string FGetCurrentGameLanguage( IntPtr self );
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		private delegate Utf8StringPointer FGetCurrentGameLanguage( IntPtr self );
 		private FGetCurrentGameLanguage _GetCurrentGameLanguage;
 		
 		#endregion
@@ -139,9 +136,8 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]
-		private delegate string FGetAvailableGameLanguages( IntPtr self );
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		private delegate Utf8StringPointer FGetAvailableGameLanguages( IntPtr self );
 		private FGetAvailableGameLanguages _GetAvailableGameLanguages;
 		
 		#endregion
@@ -151,7 +147,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsSubscribedApp( IntPtr self, AppId appID );
 		private FBIsSubscribedApp _BIsSubscribedApp;
@@ -163,7 +159,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsDlcInstalled( IntPtr self, AppId appID );
 		private FBIsDlcInstalled _BIsDlcInstalled;
@@ -175,7 +171,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetEarliestPurchaseUnixTime( IntPtr self, AppId nAppID );
 		private FGetEarliestPurchaseUnixTime _GetEarliestPurchaseUnixTime;
 		
@@ -186,7 +182,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsSubscribedFromFreeWeekend( IntPtr self );
 		private FBIsSubscribedFromFreeWeekend _BIsSubscribedFromFreeWeekend;
@@ -198,7 +194,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetDLCCount( IntPtr self );
 		private FGetDLCCount _GetDLCCount;
 		
@@ -209,7 +205,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBGetDLCDataByIndex( IntPtr self, int iDLC, ref AppId pAppID, [MarshalAs( UnmanagedType.U1 )] ref bool pbAvailable, StringBuilder pchName, int cchNameBufferSize );
 		private FBGetDLCDataByIndex _BGetDLCDataByIndex;
@@ -221,7 +217,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FInstallDLC( IntPtr self, AppId nAppID );
 		private FInstallDLC _InstallDLC;
 		
@@ -232,7 +228,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FUninstallDLC( IntPtr self, AppId nAppID );
 		private FUninstallDLC _UninstallDLC;
 		
@@ -243,7 +239,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FRequestAppProofOfPurchaseKey( IntPtr self, AppId nAppID );
 		private FRequestAppProofOfPurchaseKey _RequestAppProofOfPurchaseKey;
 		
@@ -254,7 +250,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetCurrentBetaName( IntPtr self, StringBuilder pchName, int cchNameBufferSize );
 		private FGetCurrentBetaName _GetCurrentBetaName;
@@ -266,7 +262,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FMarkContentCorrupt( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bMissingFilesOnly );
 		private FMarkContentCorrupt _MarkContentCorrupt;
@@ -278,7 +274,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetInstalledDepots( IntPtr self, AppId appID, [In,Out] DepotId_t[]  pvecDepots, uint cMaxDepots );
 		private FGetInstalledDepots _GetInstalledDepots;
 		
@@ -289,7 +285,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetAppInstallDir( IntPtr self, AppId appID, StringBuilder pchFolder, uint cchFolderBufferSize );
 		private FGetAppInstallDir _GetAppInstallDir;
 		
@@ -300,7 +296,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsAppInstalled( IntPtr self, AppId appID );
 		private FBIsAppInstalled _BIsAppInstalled;
@@ -312,30 +308,29 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		#if PLATFORM_WIN
+		private delegate void FGetAppOwner( IntPtr self, ref SteamId retVal );
+		#else
 		private delegate SteamId FGetAppOwner( IntPtr self );
+		#endif
 		private FGetAppOwner _GetAppOwner;
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		private delegate void FGetAppOwner_Windows( IntPtr self, ref SteamId retVal );
-		private FGetAppOwner_Windows _GetAppOwner_Windows;
 		
 		#endregion
 		internal SteamId GetAppOwner()
 		{
-			if ( Config.Os == OsType.Windows )
-			{
-				var retVal = default( SteamId );
-				_GetAppOwner_Windows( Self, ref retVal );
-				return retVal;
-			}
-			
+			#if PLATFORM_WIN
+			var retVal = default( SteamId );
+			_GetAppOwner( Self, ref retVal );
+			return retVal;
+			#else
 			return _GetAppOwner( Self );
+			#endif
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]
-		private delegate string FGetLaunchQueryParam( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey );
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		private delegate Utf8StringPointer FGetLaunchQueryParam( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchKey );
 		private FGetLaunchQueryParam _GetLaunchQueryParam;
 		
 		#endregion
@@ -345,7 +340,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetDlcDownloadProgress( IntPtr self, AppId nAppID, ref ulong punBytesDownloaded, ref ulong punBytesTotal );
 		private FGetDlcDownloadProgress _GetDlcDownloadProgress;
@@ -357,7 +352,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetAppBuildId( IntPtr self );
 		private FGetAppBuildId _GetAppBuildId;
 		
@@ -368,7 +363,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FRequestAllProofOfPurchaseKeys( IntPtr self );
 		private FRequestAllProofOfPurchaseKeys _RequestAllProofOfPurchaseKeys;
 		
@@ -379,7 +374,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FGetFileDetails( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pszFileName );
 		private FGetFileDetails _GetFileDetails;
 		
@@ -390,7 +385,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetLaunchCommandLine( IntPtr self, StringBuilder pszCommandLine, int cubCommandLine );
 		private FGetLaunchCommandLine _GetLaunchCommandLine;
 		
@@ -401,7 +396,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBIsSubscribedFromFamilySharing( IntPtr self );
 		private FBIsSubscribedFromFamilySharing _BIsSubscribedFromFamilySharing;

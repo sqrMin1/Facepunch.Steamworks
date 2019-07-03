@@ -13,36 +13,36 @@ namespace Steamworks
 		
 		public override void InitInternals()
 		{
-			_GetSecondsSinceAppActive = Marshal.GetDelegateForFunctionPointer<FGetSecondsSinceAppActive>( Marshal.ReadIntPtr( VTable, 0) );
-			_GetSecondsSinceComputerActive = Marshal.GetDelegateForFunctionPointer<FGetSecondsSinceComputerActive>( Marshal.ReadIntPtr( VTable, 8) );
-			_GetConnectedUniverse = Marshal.GetDelegateForFunctionPointer<FGetConnectedUniverse>( Marshal.ReadIntPtr( VTable, 16) );
-			_GetServerRealTime = Marshal.GetDelegateForFunctionPointer<FGetServerRealTime>( Marshal.ReadIntPtr( VTable, 24) );
-			_GetIPCountry = Marshal.GetDelegateForFunctionPointer<FGetIPCountry>( Marshal.ReadIntPtr( VTable, 32) );
-			_GetImageSize = Marshal.GetDelegateForFunctionPointer<FGetImageSize>( Marshal.ReadIntPtr( VTable, 40) );
-			_GetImageRGBA = Marshal.GetDelegateForFunctionPointer<FGetImageRGBA>( Marshal.ReadIntPtr( VTable, 48) );
-			_GetCSERIPPort = Marshal.GetDelegateForFunctionPointer<FGetCSERIPPort>( Marshal.ReadIntPtr( VTable, 56) );
-			_GetCurrentBatteryPower = Marshal.GetDelegateForFunctionPointer<FGetCurrentBatteryPower>( Marshal.ReadIntPtr( VTable, 64) );
-			_GetAppID = Marshal.GetDelegateForFunctionPointer<FGetAppID>( Marshal.ReadIntPtr( VTable, 72) );
-			_SetOverlayNotificationPosition = Marshal.GetDelegateForFunctionPointer<FSetOverlayNotificationPosition>( Marshal.ReadIntPtr( VTable, 80) );
-			_IsAPICallCompleted = Marshal.GetDelegateForFunctionPointer<FIsAPICallCompleted>( Marshal.ReadIntPtr( VTable, 88) );
-			_GetAPICallFailureReason = Marshal.GetDelegateForFunctionPointer<FGetAPICallFailureReason>( Marshal.ReadIntPtr( VTable, 96) );
-			_GetAPICallResult = Marshal.GetDelegateForFunctionPointer<FGetAPICallResult>( Marshal.ReadIntPtr( VTable, 104) );
-			_RunFrame = Marshal.GetDelegateForFunctionPointer<FRunFrame>( Marshal.ReadIntPtr( VTable, 112) );
-			_GetIPCCallCount = Marshal.GetDelegateForFunctionPointer<FGetIPCCallCount>( Marshal.ReadIntPtr( VTable, 120) );
-			_SetWarningMessageHook = Marshal.GetDelegateForFunctionPointer<FSetWarningMessageHook>( Marshal.ReadIntPtr( VTable, 128) );
-			_IsOverlayEnabled = Marshal.GetDelegateForFunctionPointer<FIsOverlayEnabled>( Marshal.ReadIntPtr( VTable, 136) );
-			_BOverlayNeedsPresent = Marshal.GetDelegateForFunctionPointer<FBOverlayNeedsPresent>( Marshal.ReadIntPtr( VTable, 144) );
-			_CheckFileSignature = Marshal.GetDelegateForFunctionPointer<FCheckFileSignature>( Marshal.ReadIntPtr( VTable, 152) );
-			_ShowGamepadTextInput = Marshal.GetDelegateForFunctionPointer<FShowGamepadTextInput>( Marshal.ReadIntPtr( VTable, 160) );
-			_GetEnteredGamepadTextLength = Marshal.GetDelegateForFunctionPointer<FGetEnteredGamepadTextLength>( Marshal.ReadIntPtr( VTable, 168) );
-			_GetEnteredGamepadTextInput = Marshal.GetDelegateForFunctionPointer<FGetEnteredGamepadTextInput>( Marshal.ReadIntPtr( VTable, 176) );
-			_GetSteamUILanguage = Marshal.GetDelegateForFunctionPointer<FGetSteamUILanguage>( Marshal.ReadIntPtr( VTable, 184) );
-			_IsSteamRunningInVR = Marshal.GetDelegateForFunctionPointer<FIsSteamRunningInVR>( Marshal.ReadIntPtr( VTable, 192) );
-			_SetOverlayNotificationInset = Marshal.GetDelegateForFunctionPointer<FSetOverlayNotificationInset>( Marshal.ReadIntPtr( VTable, 200) );
-			_IsSteamInBigPictureMode = Marshal.GetDelegateForFunctionPointer<FIsSteamInBigPictureMode>( Marshal.ReadIntPtr( VTable, 208) );
-			_StartVRDashboard = Marshal.GetDelegateForFunctionPointer<FStartVRDashboard>( Marshal.ReadIntPtr( VTable, 216) );
-			_IsVRHeadsetStreamingEnabled = Marshal.GetDelegateForFunctionPointer<FIsVRHeadsetStreamingEnabled>( Marshal.ReadIntPtr( VTable, 224) );
-			_SetVRHeadsetStreamingEnabled = Marshal.GetDelegateForFunctionPointer<FSetVRHeadsetStreamingEnabled>( Marshal.ReadIntPtr( VTable, 232) );
+			_GetSecondsSinceAppActive = Marshal.GetDelegateForFunctionPointer<FGetSecondsSinceAppActive>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 0 ) ) );
+			_GetSecondsSinceComputerActive = Marshal.GetDelegateForFunctionPointer<FGetSecondsSinceComputerActive>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 8 ) ) );
+			_GetConnectedUniverse = Marshal.GetDelegateForFunctionPointer<FGetConnectedUniverse>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 16 ) ) );
+			_GetServerRealTime = Marshal.GetDelegateForFunctionPointer<FGetServerRealTime>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 24 ) ) );
+			_GetIPCountry = Marshal.GetDelegateForFunctionPointer<FGetIPCountry>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 32 ) ) );
+			_GetImageSize = Marshal.GetDelegateForFunctionPointer<FGetImageSize>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 40 ) ) );
+			_GetImageRGBA = Marshal.GetDelegateForFunctionPointer<FGetImageRGBA>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 48 ) ) );
+			_GetCSERIPPort = Marshal.GetDelegateForFunctionPointer<FGetCSERIPPort>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 56 ) ) );
+			_GetCurrentBatteryPower = Marshal.GetDelegateForFunctionPointer<FGetCurrentBatteryPower>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 64 ) ) );
+			_GetAppID = Marshal.GetDelegateForFunctionPointer<FGetAppID>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 72 ) ) );
+			_SetOverlayNotificationPosition = Marshal.GetDelegateForFunctionPointer<FSetOverlayNotificationPosition>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 80 ) ) );
+			_IsAPICallCompleted = Marshal.GetDelegateForFunctionPointer<FIsAPICallCompleted>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 88 ) ) );
+			_GetAPICallFailureReason = Marshal.GetDelegateForFunctionPointer<FGetAPICallFailureReason>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 96 ) ) );
+			_GetAPICallResult = Marshal.GetDelegateForFunctionPointer<FGetAPICallResult>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 104 ) ) );
+			_RunFrame = Marshal.GetDelegateForFunctionPointer<FRunFrame>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 112 ) ) );
+			_GetIPCCallCount = Marshal.GetDelegateForFunctionPointer<FGetIPCCallCount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 120 ) ) );
+			_SetWarningMessageHook = Marshal.GetDelegateForFunctionPointer<FSetWarningMessageHook>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 128 ) ) );
+			_IsOverlayEnabled = Marshal.GetDelegateForFunctionPointer<FIsOverlayEnabled>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 136 ) ) );
+			_BOverlayNeedsPresent = Marshal.GetDelegateForFunctionPointer<FBOverlayNeedsPresent>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 144 ) ) );
+			_CheckFileSignature = Marshal.GetDelegateForFunctionPointer<FCheckFileSignature>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 152 ) ) );
+			_ShowGamepadTextInput = Marshal.GetDelegateForFunctionPointer<FShowGamepadTextInput>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 160 ) ) );
+			_GetEnteredGamepadTextLength = Marshal.GetDelegateForFunctionPointer<FGetEnteredGamepadTextLength>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 168 ) ) );
+			_GetEnteredGamepadTextInput = Marshal.GetDelegateForFunctionPointer<FGetEnteredGamepadTextInput>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 176 ) ) );
+			_GetSteamUILanguage = Marshal.GetDelegateForFunctionPointer<FGetSteamUILanguage>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 184 ) ) );
+			_IsSteamRunningInVR = Marshal.GetDelegateForFunctionPointer<FIsSteamRunningInVR>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 192 ) ) );
+			_SetOverlayNotificationInset = Marshal.GetDelegateForFunctionPointer<FSetOverlayNotificationInset>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 200 ) ) );
+			_IsSteamInBigPictureMode = Marshal.GetDelegateForFunctionPointer<FIsSteamInBigPictureMode>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 208 ) ) );
+			_StartVRDashboard = Marshal.GetDelegateForFunctionPointer<FStartVRDashboard>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 216 ) ) );
+			_IsVRHeadsetStreamingEnabled = Marshal.GetDelegateForFunctionPointer<FIsVRHeadsetStreamingEnabled>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 224 ) ) );
+			_SetVRHeadsetStreamingEnabled = Marshal.GetDelegateForFunctionPointer<FSetVRHeadsetStreamingEnabled>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 232 ) ) );
 		}
 		internal override void Shutdown()
 		{
@@ -81,7 +81,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetSecondsSinceAppActive( IntPtr self );
 		private FGetSecondsSinceAppActive _GetSecondsSinceAppActive;
 		
@@ -92,7 +92,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetSecondsSinceComputerActive( IntPtr self );
 		private FGetSecondsSinceComputerActive _GetSecondsSinceComputerActive;
 		
@@ -103,7 +103,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate Universe FGetConnectedUniverse( IntPtr self );
 		private FGetConnectedUniverse _GetConnectedUniverse;
 		
@@ -114,7 +114,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetServerRealTime( IntPtr self );
 		private FGetServerRealTime _GetServerRealTime;
 		
@@ -125,9 +125,8 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]
-		private delegate string FGetIPCountry( IntPtr self );
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		private delegate Utf8StringPointer FGetIPCountry( IntPtr self );
 		private FGetIPCountry _GetIPCountry;
 		
 		#endregion
@@ -137,7 +136,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetImageSize( IntPtr self, int iImage, ref uint pnWidth, ref uint pnHeight );
 		private FGetImageSize _GetImageSize;
@@ -149,7 +148,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetImageRGBA( IntPtr self, int iImage, [In,Out] byte[]  pubDest, int nDestBufferSize );
 		private FGetImageRGBA _GetImageRGBA;
@@ -161,7 +160,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetCSERIPPort( IntPtr self, ref uint unIP, ref ushort usPort );
 		private FGetCSERIPPort _GetCSERIPPort;
@@ -173,7 +172,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate byte FGetCurrentBatteryPower( IntPtr self );
 		private FGetCurrentBatteryPower _GetCurrentBatteryPower;
 		
@@ -184,7 +183,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetAppID( IntPtr self );
 		private FGetAppID _GetAppID;
 		
@@ -195,7 +194,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetOverlayNotificationPosition( IntPtr self, NotificationPosition eNotificationPosition );
 		private FSetOverlayNotificationPosition _SetOverlayNotificationPosition;
 		
@@ -206,7 +205,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsAPICallCompleted( IntPtr self, SteamAPICall_t hSteamAPICall, [MarshalAs( UnmanagedType.U1 )] ref bool pbFailed );
 		private FIsAPICallCompleted _IsAPICallCompleted;
@@ -218,7 +217,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICallFailure FGetAPICallFailureReason( IntPtr self, SteamAPICall_t hSteamAPICall );
 		private FGetAPICallFailureReason _GetAPICallFailureReason;
 		
@@ -229,7 +228,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetAPICallResult( IntPtr self, SteamAPICall_t hSteamAPICall, IntPtr pCallback, int cubCallback, int iCallbackExpected, [MarshalAs( UnmanagedType.U1 )] ref bool pbFailed );
 		private FGetAPICallResult _GetAPICallResult;
@@ -241,7 +240,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FRunFrame( IntPtr self );
 		private FRunFrame _RunFrame;
 		
@@ -252,7 +251,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetIPCCallCount( IntPtr self );
 		private FGetIPCCallCount _GetIPCCallCount;
 		
@@ -263,7 +262,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetWarningMessageHook( IntPtr self, IntPtr pFunction );
 		private FSetWarningMessageHook _SetWarningMessageHook;
 		
@@ -274,7 +273,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsOverlayEnabled( IntPtr self );
 		private FIsOverlayEnabled _IsOverlayEnabled;
@@ -286,7 +285,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FBOverlayNeedsPresent( IntPtr self );
 		private FBOverlayNeedsPresent _BOverlayNeedsPresent;
@@ -298,7 +297,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FCheckFileSignature( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string szFileName );
 		private FCheckFileSignature _CheckFileSignature;
 		
@@ -309,7 +308,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FShowGamepadTextInput( IntPtr self, GamepadTextInputMode eInputMode, GamepadTextInputLineMode eLineInputMode, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchDescription, uint unCharMax, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchExistingText );
 		private FShowGamepadTextInput _ShowGamepadTextInput;
@@ -321,7 +320,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate uint FGetEnteredGamepadTextLength( IntPtr self );
 		private FGetEnteredGamepadTextLength _GetEnteredGamepadTextLength;
 		
@@ -332,7 +331,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetEnteredGamepadTextInput( IntPtr self, StringBuilder pchText, uint cchText );
 		private FGetEnteredGamepadTextInput _GetEnteredGamepadTextInput;
@@ -344,9 +343,8 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]
-		private delegate string FGetSteamUILanguage( IntPtr self );
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		private delegate Utf8StringPointer FGetSteamUILanguage( IntPtr self );
 		private FGetSteamUILanguage _GetSteamUILanguage;
 		
 		#endregion
@@ -356,7 +354,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsSteamRunningInVR( IntPtr self );
 		private FIsSteamRunningInVR _IsSteamRunningInVR;
@@ -368,7 +366,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetOverlayNotificationInset( IntPtr self, int nHorizontalInset, int nVerticalInset );
 		private FSetOverlayNotificationInset _SetOverlayNotificationInset;
 		
@@ -379,7 +377,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsSteamInBigPictureMode( IntPtr self );
 		private FIsSteamInBigPictureMode _IsSteamInBigPictureMode;
@@ -391,7 +389,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FStartVRDashboard( IntPtr self );
 		private FStartVRDashboard _StartVRDashboard;
 		
@@ -402,7 +400,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsVRHeadsetStreamingEnabled( IntPtr self );
 		private FIsVRHeadsetStreamingEnabled _IsVRHeadsetStreamingEnabled;
@@ -414,7 +412,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetVRHeadsetStreamingEnabled( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bEnabled );
 		private FSetVRHeadsetStreamingEnabled _SetVRHeadsetStreamingEnabled;
 		

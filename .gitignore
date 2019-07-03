@@ -74,4 +74,4 @@ packages
 Generator/bin
 *.XML
 .vs
-bin
+Facepunch.Steamworks.Test/bin/**

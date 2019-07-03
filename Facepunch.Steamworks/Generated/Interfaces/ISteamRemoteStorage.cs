@@ -13,60 +13,60 @@ namespace Steamworks
 		
 		public override void InitInternals()
 		{
-			_FileWrite = Marshal.GetDelegateForFunctionPointer<FFileWrite>( Marshal.ReadIntPtr( VTable, 0) );
-			_FileRead = Marshal.GetDelegateForFunctionPointer<FFileRead>( Marshal.ReadIntPtr( VTable, 8) );
-			_FileWriteAsync = Marshal.GetDelegateForFunctionPointer<FFileWriteAsync>( Marshal.ReadIntPtr( VTable, 16) );
-			_FileReadAsync = Marshal.GetDelegateForFunctionPointer<FFileReadAsync>( Marshal.ReadIntPtr( VTable, 24) );
-			_FileReadAsyncComplete = Marshal.GetDelegateForFunctionPointer<FFileReadAsyncComplete>( Marshal.ReadIntPtr( VTable, 32) );
-			_FileForget = Marshal.GetDelegateForFunctionPointer<FFileForget>( Marshal.ReadIntPtr( VTable, 40) );
-			_FileDelete = Marshal.GetDelegateForFunctionPointer<FFileDelete>( Marshal.ReadIntPtr( VTable, 48) );
-			_FileShare = Marshal.GetDelegateForFunctionPointer<FFileShare>( Marshal.ReadIntPtr( VTable, 56) );
-			_SetSyncPlatforms = Marshal.GetDelegateForFunctionPointer<FSetSyncPlatforms>( Marshal.ReadIntPtr( VTable, 64) );
-			_FileWriteStreamOpen = Marshal.GetDelegateForFunctionPointer<FFileWriteStreamOpen>( Marshal.ReadIntPtr( VTable, 72) );
-			_FileWriteStreamWriteChunk = Marshal.GetDelegateForFunctionPointer<FFileWriteStreamWriteChunk>( Marshal.ReadIntPtr( VTable, 80) );
-			_FileWriteStreamClose = Marshal.GetDelegateForFunctionPointer<FFileWriteStreamClose>( Marshal.ReadIntPtr( VTable, 88) );
-			_FileWriteStreamCancel = Marshal.GetDelegateForFunctionPointer<FFileWriteStreamCancel>( Marshal.ReadIntPtr( VTable, 96) );
-			_FileExists = Marshal.GetDelegateForFunctionPointer<FFileExists>( Marshal.ReadIntPtr( VTable, 104) );
-			_FilePersisted = Marshal.GetDelegateForFunctionPointer<FFilePersisted>( Marshal.ReadIntPtr( VTable, 112) );
-			_GetFileSize = Marshal.GetDelegateForFunctionPointer<FGetFileSize>( Marshal.ReadIntPtr( VTable, 120) );
-			_GetFileTimestamp = Marshal.GetDelegateForFunctionPointer<FGetFileTimestamp>( Marshal.ReadIntPtr( VTable, 128) );
-			_GetSyncPlatforms = Marshal.GetDelegateForFunctionPointer<FGetSyncPlatforms>( Marshal.ReadIntPtr( VTable, 136) );
-			_GetFileCount = Marshal.GetDelegateForFunctionPointer<FGetFileCount>( Marshal.ReadIntPtr( VTable, 144) );
-			_GetFileNameAndSize = Marshal.GetDelegateForFunctionPointer<FGetFileNameAndSize>( Marshal.ReadIntPtr( VTable, 152) );
-			_GetQuota = Marshal.GetDelegateForFunctionPointer<FGetQuota>( Marshal.ReadIntPtr( VTable, 160) );
-			_IsCloudEnabledForAccount = Marshal.GetDelegateForFunctionPointer<FIsCloudEnabledForAccount>( Marshal.ReadIntPtr( VTable, 168) );
-			_IsCloudEnabledForApp = Marshal.GetDelegateForFunctionPointer<FIsCloudEnabledForApp>( Marshal.ReadIntPtr( VTable, 176) );
-			_SetCloudEnabledForApp = Marshal.GetDelegateForFunctionPointer<FSetCloudEnabledForApp>( Marshal.ReadIntPtr( VTable, 184) );
-			_UGCDownload = Marshal.GetDelegateForFunctionPointer<FUGCDownload>( Marshal.ReadIntPtr( VTable, 192) );
-			_GetUGCDownloadProgress = Marshal.GetDelegateForFunctionPointer<FGetUGCDownloadProgress>( Marshal.ReadIntPtr( VTable, 200) );
-			_GetUGCDetails = Marshal.GetDelegateForFunctionPointer<FGetUGCDetails>( Marshal.ReadIntPtr( VTable, 208) );
-			_UGCRead = Marshal.GetDelegateForFunctionPointer<FUGCRead>( Marshal.ReadIntPtr( VTable, 216) );
-			_GetCachedUGCCount = Marshal.GetDelegateForFunctionPointer<FGetCachedUGCCount>( Marshal.ReadIntPtr( VTable, 224) );
-			 // PublishWorkshopFile is deprecated - 232
-			 // CreatePublishedFileUpdateRequest is deprecated - 240
-			 // UpdatePublishedFileFile is deprecated - 248
-			 // UpdatePublishedFilePreviewFile is deprecated - 256
-			 // UpdatePublishedFileTitle is deprecated - 264
-			 // UpdatePublishedFileDescription is deprecated - 272
-			 // UpdatePublishedFileVisibility is deprecated - 280
-			 // UpdatePublishedFileTags is deprecated - 288
-			 // CommitPublishedFileUpdate is deprecated - 296
-			 // GetPublishedFileDetails is deprecated - 304
-			 // DeletePublishedFile is deprecated - 312
-			 // EnumerateUserPublishedFiles is deprecated - 320
-			 // SubscribePublishedFile is deprecated - 328
-			 // EnumerateUserSubscribedFiles is deprecated - 336
-			 // UnsubscribePublishedFile is deprecated - 344
-			 // UpdatePublishedFileSetChangeDescription is deprecated - 352
-			 // GetPublishedItemVoteDetails is deprecated - 360
-			 // UpdateUserPublishedItemVote is deprecated - 368
-			 // GetUserPublishedItemVoteDetails is deprecated - 376
-			 // EnumerateUserSharedWorkshopFiles is deprecated - 384
-			 // PublishVideo is deprecated - 392
-			 // SetUserPublishedFileAction is deprecated - 400
-			 // EnumeratePublishedFilesByUserAction is deprecated - 408
-			 // EnumeratePublishedWorkshopFiles is deprecated - 416
-			_UGCDownloadToLocation = Marshal.GetDelegateForFunctionPointer<FUGCDownloadToLocation>( Marshal.ReadIntPtr( VTable, 424) );
+			_FileWrite = Marshal.GetDelegateForFunctionPointer<FFileWrite>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 0 ) ) );
+			_FileRead = Marshal.GetDelegateForFunctionPointer<FFileRead>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 8 ) ) );
+			_FileWriteAsync = Marshal.GetDelegateForFunctionPointer<FFileWriteAsync>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 16 ) ) );
+			_FileReadAsync = Marshal.GetDelegateForFunctionPointer<FFileReadAsync>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 24 ) ) );
+			_FileReadAsyncComplete = Marshal.GetDelegateForFunctionPointer<FFileReadAsyncComplete>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 32 ) ) );
+			_FileForget = Marshal.GetDelegateForFunctionPointer<FFileForget>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 40 ) ) );
+			_FileDelete = Marshal.GetDelegateForFunctionPointer<FFileDelete>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 48 ) ) );
+			_FileShare = Marshal.GetDelegateForFunctionPointer<FFileShare>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 56 ) ) );
+			_SetSyncPlatforms = Marshal.GetDelegateForFunctionPointer<FSetSyncPlatforms>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 64 ) ) );
+			_FileWriteStreamOpen = Marshal.GetDelegateForFunctionPointer<FFileWriteStreamOpen>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 72 ) ) );
+			_FileWriteStreamWriteChunk = Marshal.GetDelegateForFunctionPointer<FFileWriteStreamWriteChunk>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 80 ) ) );
+			_FileWriteStreamClose = Marshal.GetDelegateForFunctionPointer<FFileWriteStreamClose>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 88 ) ) );
+			_FileWriteStreamCancel = Marshal.GetDelegateForFunctionPointer<FFileWriteStreamCancel>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 96 ) ) );
+			_FileExists = Marshal.GetDelegateForFunctionPointer<FFileExists>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 104 ) ) );
+			_FilePersisted = Marshal.GetDelegateForFunctionPointer<FFilePersisted>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 112 ) ) );
+			_GetFileSize = Marshal.GetDelegateForFunctionPointer<FGetFileSize>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 120 ) ) );
+			_GetFileTimestamp = Marshal.GetDelegateForFunctionPointer<FGetFileTimestamp>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 128 ) ) );
+			_GetSyncPlatforms = Marshal.GetDelegateForFunctionPointer<FGetSyncPlatforms>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 136 ) ) );
+			_GetFileCount = Marshal.GetDelegateForFunctionPointer<FGetFileCount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 144 ) ) );
+			_GetFileNameAndSize = Marshal.GetDelegateForFunctionPointer<FGetFileNameAndSize>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 152 ) ) );
+			_GetQuota = Marshal.GetDelegateForFunctionPointer<FGetQuota>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 160 ) ) );
+			_IsCloudEnabledForAccount = Marshal.GetDelegateForFunctionPointer<FIsCloudEnabledForAccount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 168 ) ) );
+			_IsCloudEnabledForApp = Marshal.GetDelegateForFunctionPointer<FIsCloudEnabledForApp>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 176 ) ) );
+			_SetCloudEnabledForApp = Marshal.GetDelegateForFunctionPointer<FSetCloudEnabledForApp>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 184 ) ) );
+			_UGCDownload = Marshal.GetDelegateForFunctionPointer<FUGCDownload>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 192 ) ) );
+			_GetUGCDownloadProgress = Marshal.GetDelegateForFunctionPointer<FGetUGCDownloadProgress>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 200 ) ) );
+			_GetUGCDetails = Marshal.GetDelegateForFunctionPointer<FGetUGCDetails>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 208 ) ) );
+			_UGCRead = Marshal.GetDelegateForFunctionPointer<FUGCRead>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 216 ) ) );
+			_GetCachedUGCCount = Marshal.GetDelegateForFunctionPointer<FGetCachedUGCCount>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 224 ) ) );
+			 // PublishWorkshopFile is deprecated
+			 // CreatePublishedFileUpdateRequest is deprecated
+			 // UpdatePublishedFileFile is deprecated
+			 // UpdatePublishedFilePreviewFile is deprecated
+			 // UpdatePublishedFileTitle is deprecated
+			 // UpdatePublishedFileDescription is deprecated
+			 // UpdatePublishedFileVisibility is deprecated
+			 // UpdatePublishedFileTags is deprecated
+			 // CommitPublishedFileUpdate is deprecated
+			 // GetPublishedFileDetails is deprecated
+			 // DeletePublishedFile is deprecated
+			 // EnumerateUserPublishedFiles is deprecated
+			 // SubscribePublishedFile is deprecated
+			 // EnumerateUserSubscribedFiles is deprecated
+			 // UnsubscribePublishedFile is deprecated
+			 // UpdatePublishedFileSetChangeDescription is deprecated
+			 // GetPublishedItemVoteDetails is deprecated
+			 // UpdateUserPublishedItemVote is deprecated
+			 // GetUserPublishedItemVoteDetails is deprecated
+			 // EnumerateUserSharedWorkshopFiles is deprecated
+			 // PublishVideo is deprecated
+			 // SetUserPublishedFileAction is deprecated
+			 // EnumeratePublishedFilesByUserAction is deprecated
+			 // EnumeratePublishedWorkshopFiles is deprecated
+			_UGCDownloadToLocation = Marshal.GetDelegateForFunctionPointer<FUGCDownloadToLocation>( Marshal.ReadIntPtr( VTable, Platform.MemoryOffset( 424 ) ) );
 		}
 		internal override void Shutdown()
 		{
@@ -105,7 +105,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFileWrite( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile, IntPtr pvData, int cubData );
 		private FFileWrite _FileWrite;
@@ -117,7 +117,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FFileRead( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile, IntPtr pvData, int cubDataToRead );
 		private FFileRead _FileRead;
 		
@@ -128,7 +128,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FFileWriteAsync( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile, IntPtr pvData, uint cubData );
 		private FFileWriteAsync _FileWriteAsync;
 		
@@ -139,7 +139,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FFileReadAsync( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile, uint nOffset, uint cubToRead );
 		private FFileReadAsync _FileReadAsync;
 		
@@ -150,7 +150,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFileReadAsyncComplete( IntPtr self, SteamAPICall_t hReadCall, IntPtr pvBuffer, uint cubToRead );
 		private FFileReadAsyncComplete _FileReadAsyncComplete;
@@ -162,7 +162,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFileForget( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FFileForget _FileForget;
@@ -174,7 +174,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFileDelete( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FFileDelete _FileDelete;
@@ -186,7 +186,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FFileShare( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FFileShare _FileShare;
 		
@@ -197,7 +197,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FSetSyncPlatforms( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile, RemoteStoragePlatform eRemoteStoragePlatform );
 		private FSetSyncPlatforms _SetSyncPlatforms;
@@ -209,7 +209,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate UGCFileWriteStreamHandle_t FFileWriteStreamOpen( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FFileWriteStreamOpen _FileWriteStreamOpen;
 		
@@ -220,7 +220,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFileWriteStreamWriteChunk( IntPtr self, UGCFileWriteStreamHandle_t writeHandle, IntPtr pvData, int cubData );
 		private FFileWriteStreamWriteChunk _FileWriteStreamWriteChunk;
@@ -232,7 +232,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFileWriteStreamClose( IntPtr self, UGCFileWriteStreamHandle_t writeHandle );
 		private FFileWriteStreamClose _FileWriteStreamClose;
@@ -244,7 +244,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFileWriteStreamCancel( IntPtr self, UGCFileWriteStreamHandle_t writeHandle );
 		private FFileWriteStreamCancel _FileWriteStreamCancel;
@@ -256,7 +256,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFileExists( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FFileExists _FileExists;
@@ -268,7 +268,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FFilePersisted( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FFilePersisted _FilePersisted;
@@ -280,7 +280,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetFileSize( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FGetFileSize _GetFileSize;
 		
@@ -291,7 +291,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate long FGetFileTimestamp( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FGetFileTimestamp _GetFileTimestamp;
 		
@@ -302,7 +302,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate RemoteStoragePlatform FGetSyncPlatforms( IntPtr self, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchFile );
 		private FGetSyncPlatforms _GetSyncPlatforms;
 		
@@ -313,7 +313,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetFileCount( IntPtr self );
 		private FGetFileCount _GetFileCount;
 		
@@ -324,9 +324,8 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
-		[return: MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringFromNative ) )]
-		private delegate string FGetFileNameAndSize( IntPtr self, int iFile, ref int pnFileSizeInBytes );
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
+		private delegate Utf8StringPointer FGetFileNameAndSize( IntPtr self, int iFile, ref int pnFileSizeInBytes );
 		private FGetFileNameAndSize _GetFileNameAndSize;
 		
 		#endregion
@@ -336,7 +335,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetQuota( IntPtr self, ref ulong pnTotalBytes, ref ulong puAvailableBytes );
 		private FGetQuota _GetQuota;
@@ -348,7 +347,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsCloudEnabledForAccount( IntPtr self );
 		private FIsCloudEnabledForAccount _IsCloudEnabledForAccount;
@@ -360,7 +359,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FIsCloudEnabledForApp( IntPtr self );
 		private FIsCloudEnabledForApp _IsCloudEnabledForApp;
@@ -372,7 +371,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate void FSetCloudEnabledForApp( IntPtr self, [MarshalAs( UnmanagedType.U1 )] bool bEnabled );
 		private FSetCloudEnabledForApp _SetCloudEnabledForApp;
 		
@@ -383,7 +382,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FUGCDownload( IntPtr self, UGCHandle_t hContent, uint unPriority );
 		private FUGCDownload _UGCDownload;
 		
@@ -394,7 +393,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetUGCDownloadProgress( IntPtr self, UGCHandle_t hContent, ref int pnBytesDownloaded, ref int pnBytesExpected );
 		private FGetUGCDownloadProgress _GetUGCDownloadProgress;
@@ -406,7 +405,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		[return: MarshalAs( UnmanagedType.I1 )]
 		private delegate bool FGetUGCDetails( IntPtr self, UGCHandle_t hContent, ref AppId pnAppID, [In,Out] ref char[]  ppchName, ref int pnFileSizeInBytes, ref SteamId pSteamIDOwner );
 		private FGetUGCDetails _GetUGCDetails;
@@ -418,7 +417,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FUGCRead( IntPtr self, UGCHandle_t hContent, IntPtr pvData, int cubDataToRead, uint cOffset, UGCReadAction eAction );
 		private FUGCRead _UGCRead;
 		
@@ -429,7 +428,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate int FGetCachedUGCCount( IntPtr self );
 		private FGetCachedUGCCount _GetCachedUGCCount;
 		
@@ -440,7 +439,7 @@ namespace Steamworks
 		}
 		
 		#region FunctionMeta
-		[UnmanagedFunctionPointer( CallingConvention.ThisCall )]
+		[UnmanagedFunctionPointer( Platform.MemberConvention )]
 		private delegate SteamAPICall_t FUGCDownloadToLocation( IntPtr self, UGCHandle_t hContent, [MarshalAs( UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof( Utf8StringToNative ) )] string pchLocation, uint unPriority );
 		private FUGCDownloadToLocation _UGCDownloadToLocation;
 		
